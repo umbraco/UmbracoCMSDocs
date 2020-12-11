@@ -1,0 +1,3 @@
+# Example article
+
+Article content.
