@@ -32,6 +32,10 @@ Did you write a blog post about Umbraco on .NET Core?
 
 You are more than welcome to add the post to the list of community resources on the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates) article.
 
+Follow these steps to add your blog post to the list:
+
+* 
+
 ### Report issues and ask questions
 
 ## Status on Umbraco on .NET Core

@@ -3,7 +3,7 @@ meta.Title: "Umbraco .Net Core Updates"
 meta.Description: "Updates and information related to the upcoming release of Umbraco .Net Core."
 ---
 
-# Umbraco .Net Core
+# Umbraco on .NET Core - Updates
 
 :::note
 This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
