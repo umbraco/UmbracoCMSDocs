@@ -22,9 +22,41 @@ You can find instructions on how to get started with the product in the [Umbraco
 
 We encourage any kind of contribution to this repository.
 
+All files are written using [Markdown](https://www.markdownguide.org/cheat-sheet/). If you are new to Markdown make sure you learn the general as well as the [UmbracoDocs specific Markdown conventions](https://our.umbraco.com/documentation/Contribute/Markdown-Conventions/) before getting started.
+
 ### Write an article
 
+Do you have some knowledge about Umbraco on .NET Core that you would like to share and that hasn't already been added to this repository?
+
+Here are the steps you need to follow in order to add your article(s):
+
+* Create a **fork** of this repository (UmbracoCMSDocs).
+* Clone down your fork to your local machine.
+* Create a new folder under **Articles/** using the **topic** you will be covering in your article(s).
+* Create an `index.md` file in the topic folder. This will be the landing page for the topic.
+* Add an `images/` folder to the topic, if you plan on using screenshots in the article.
+* Use the name of the sub topic for the files (e.g. `sub-topic.md`) when adding more articles under the same topic.
+* Write the article(s).
+* [Create a PR from your fork](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) on this repository.
+
+We strive to answer each PR within 48 hours during week days, not including holidays.
+
 ### Write a tutorial
+
+Have you written a guide on how to do something in Umbraco on .NET Core or do you know of a workflow to complete a certain task? And is this something you'd like to share with your fellow Umbracians?
+
+Here are the steps you need to follow in order to add your tutorial(s):
+
+* Create a **fork** of this repository (UmbracoCMSDocs).
+* Clone down your fork to your local machine.
+* Create a new folder under **Tutorials/** using the **name of the tutorial** you will be creating.
+* Create an `index.md` file in the topic folder. This will be the landing page for the tutorial.
+* Add an `images/` folder to the topic, if you plan on using screenshots in the tutorial.
+* Use the *step number* for a new page, when creating a multi-page tutorial.
+* Write the tutorial(s).
+* [Create a PR from your fork](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) on this repository.
+
+We strive to answer each PR within 48 hours during week days, not including holidays.
 
 ### Link to your blog post
 
@@ -34,7 +66,11 @@ You are more than welcome to add the post to the list of community resources on 
 
 Follow these steps to add your blog post to the list:
 
-* 
+* Select the Edit tool (pencil icon) in the top-right corner of the article.
+* Add a link to your blog post below **Community blog posts** in the Community resources section of the article.
+* Add a short description of the change you've made to the **Commit changes** dialog below the article.
+* Choose **Propose file change**.
+* Ensure your link and link title is correct and **Submit the Pull Request (PR)**.
 
 ### Report issues and ask questions
 
