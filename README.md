@@ -62,7 +62,7 @@ We strive to answer each PR within 48 hours during weekdays, not including holid
 
 Did you write a blog post about Umbraco on .NET Core?
 
-You are more than welcome to add the post to the list of community resources on the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates) article.
+You are more than welcome to add the post to the list of community resources on the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates.md) article.
 
 Follow these steps to add your blog post to the list:
 
@@ -86,6 +86,6 @@ If you have any questions about Umbraco on .NET Core and the progress of the pro
 
 To follow the current status of the Umbraco on .NET Core project keep an eye on [the official Umbraco Blog](https://umbraco.com/blog/).
 
-You can also find fresh content about the project either directly from Umbraco HQ or from the community, on the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates) article.
+You can also find fresh content about the project either directly from Umbraco HQ or from the community, on the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates.md) article.
 
-## [The Official UmbracoDocs](https://https://github.com/umbraco/UmbracoDocs)
+## [The Official UmbracoDocs](https://github.com/umbraco/UmbracoDocs)
