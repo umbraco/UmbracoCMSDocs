@@ -74,6 +74,14 @@ Follow these steps to add your blog post to the list:
 
 ### Report issues and ask questions
 
+Did you find an issues with one of the articles or tutorials in this repository?
+
+Please let us know by [creating an issue on the Issue Tracker](https://github.com/umbraco/UmbracoCMSDocs/issues) and reference the article/tutorial in question.
+
+You are also more than welcome to use the Issue Tracker for any questions or comments you might have about the repository and the articles in it.
+
+If you have any questions about Umbraco on .NET Core and progress of the project, please use contact@umbraco.com instead.
+
 ## Status on Umbraco on .NET Core
 
 To follow the current status of the Umbraco on .NET Core project keep an eye on [the official Umbraco Blog](https://umbraco.com/blog/).
@@ -81,5 +89,3 @@ To follow the current status of the Umbraco on .NET Core project keep an eye on 
 You can also find fresh content about the project either directly from Umbraco HQ or from the community, on the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates) article.
 
 ## [The Official UmbracoDocs](https://https://github.com/umbraco/UmbracoDocs)
-
-These are the current documentation for Umbraco 7 and 8.
