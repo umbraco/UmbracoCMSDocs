@@ -6,11 +6,11 @@ This is NOT the official documentation for Umbraco CMS. The official UmbracoDocs
 
 ## Reading and using the articles
 
-It is **important to note** that this entire repository is a work in progress (WIP), which means that it will not contain a completed section of documentation for Umbraco.
+It is **important to note** that this entire repository is a work in progress (WIP), which means that it will not contain a completed section of the documentation for Umbraco.
 
-All articles are divided into *topics* and each article can contain various *sub-topics*. All topics and sub-topics can be found under [Articles](Articles).
+All articles are divided into *topics* and each article can contain various *subtopics*. All topics and subtopics can be found under [Articles](Articles).
 
-Each tutorial in the [Tutorials](Tutorials) folder has its own folder, in which multiple files and sub folders might also be found.
+Each tutorial in the [Tutorials](Tutorials) folder has its own folder, in which multiple files and subfolders might also be found.
 
 ## Try out Umbraco on .NET Core
 
@@ -35,11 +35,11 @@ Here are the steps you need to follow in order to add your article(s):
 * Create a new folder under **Articles/** using the **topic** you will be covering in your article(s).
 * Create an `index.md` file in the topic folder. This will be the landing page for the topic.
 * Add an `images/` folder to the topic, if you plan on using screenshots in the article.
-* Use the name of the sub topic for the files (e.g. `sub-topic.md`) when adding more articles under the same topic.
+* Use the name of the subtopic for the files (e.g. `sub-topic.md`) when adding more articles under the same topic.
 * Write the article(s).
 * [Create a PR from your fork](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) on this repository.
 
-We strive to answer each PR within 48 hours during week days, not including holidays.
+We strive to answer each PR within 48 hours during weekdays, not including holidays.
 
 ### Write a tutorial
 
@@ -56,7 +56,7 @@ Here are the steps you need to follow in order to add your tutorial(s):
 * Write the tutorial(s).
 * [Create a PR from your fork](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) on this repository.
 
-We strive to answer each PR within 48 hours during week days, not including holidays.
+We strive to answer each PR within 48 hours during weekdays, not including holidays.
 
 ### Link to your blog post
 
@@ -74,13 +74,13 @@ Follow these steps to add your blog post to the list:
 
 ### Report issues and ask questions
 
-Did you find an issues with one of the articles or tutorials in this repository?
+Did you find an issueswith one of the articles or tutorials in this repository?
 
 Please let us know by [creating an issue on the Issue Tracker](https://github.com/umbraco/UmbracoCMSDocs/issues) and reference the article/tutorial in question.
 
 You are also more than welcome to use the Issue Tracker for any questions or comments you might have about the repository and the articles in it.
 
-If you have any questions about Umbraco on .NET Core and progress of the project, please use contact@umbraco.com instead.
+If you have any questions about Umbraco on .NET Core and the progress of the project, please use contact@umbraco.com instead.
 
 ## Status on Umbraco on .NET Core
 
