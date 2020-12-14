@@ -2,7 +2,7 @@
 
 This is the new repository for articles and tutorials on Umbraco on .NET Core.
 
-This is NOT the official documentation for Umbraco CMS. The official UmbracoDocs can be found on [github/UmbracoDocs](https://https://github.com/umbraco/UmbracoDocs) or on [our.umbraco.com](https://our.umbraco.com/).
+This is NOT the official documentation for Umbraco CMS. The official UmbracoDocs can be found on [github/UmbracoDocs](https://github.com/umbraco/UmbracoDocs) or on [our.umbraco.com](https://our.umbraco.com/).
 
 ## Reading and using the articles
 
@@ -16,7 +16,7 @@ Each tutorial in the [Tutorials](Tutorials) folder has its own folder, in which 
 
 Umbraco on .NET Core is currently in alpha and everyone with an interest in Umbraco and the .NET Core framework is recommended to take it for a spin.
 
-You can find instructions on how to get started with the product in the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates) article.
+You can find instructions on how to get started with the product in the [Umbraco on .NET Core - Updates](UmbracoNetCoreUpdates.md) article.
 
 ## Contributing to the repository
 
