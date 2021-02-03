@@ -12,43 +12,20 @@ This page is served from `~/umbraco/UmbracoWebsite/NoNodes.cshtml`.
 
 Whilst the contents of this page can be edited directly, this isn't recommended, as care would need to be taken to avoid the changes getting overwritten in upgrades.
 
-Instead there are two options.
+Instead a better approach is to create your own view file and apply a configuration setting to indicate the path to the view to use.
 
-To return the contents of a different Razor file, create this file at your chosen location and configure it's use within the `Global` section of the `appsettings.json` file:
+To return the contents of a different file, create it at your chosen location and configure it's use by adding an entry for `NoNodesViewPath` at the following path: `Umbraco:CMS:Global`.
+
+This configuration can be setup in a configuration source of your choice.  For the default JSON based configuration you can apply this to `appSettings.json` (or `appSettings.<environment>.json`, e.g. `appSettings.Development.json`) as follows:
 
 ```
 "Umbraco": {
-    "CMS": {
+  "CMS": {
+    ...
+    "Global": {
       ...
-      "Global": {
-        ...
-        "NoNodesViewPath": "~/Views/CustomNoNodes.cshtml",
-        ...
-      },
-	  ...
-```
-
-For finer control, you can write code to handle the route directly, allowing the implementation of a custom controller, view model and view:
-
-```
-    public class CustomNoNodesComposer: ComponentComposer<CustomNoNodesComponent>, IUserComposer
-    {
-    }
-
-    public class CustomNoNodesComponent : IComponent
-    {
-        public void Initialize()
-        {
-            if (RouteTable.Routes[Constants.Web.NoContentRouteName] is Route route)
-            {
-                route.Defaults = new RouteValueDictionary()
-                {
-                    ["controller"] = "CustomNoNodes",
-                    ["action"] = "Index"
-                };
-            }
-        }
-
-        public void Terminate() { }
-    }
+      "NoNodesViewPath": "~/Views/CustomNoNodes.cshtml",
+      ...
+    },
+    ...
 ```
