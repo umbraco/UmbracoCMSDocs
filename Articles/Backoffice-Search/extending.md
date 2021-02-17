@@ -70,7 +70,7 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbra
 {
     public List<string> GetBackOfficeMediaFields()
     {
-       return new List<string>(base.GetBackOfficeDocumentFields()) { "parentID" };
+       return new List<string>(base.GetBackOfficeMediaFields()) { "parentID" };
     }
 }
 ```
