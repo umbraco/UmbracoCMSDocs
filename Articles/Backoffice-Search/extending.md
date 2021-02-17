@@ -44,7 +44,7 @@ public class MyComposer : IUserComposer
 ```csharp
 public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
 {
-    public List<string> GetBackOfficeFields()
+    public IEnumerable<string> GetBackOfficeFields()
     {
         return new List<string>(base.GetBackOfficeFields()) { "parentID" };
     }
@@ -56,7 +56,7 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbra
 ```csharp
 public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IInternalSearchConstants
 {
-    public List<string> GetBackOfficeDocumentFields()
+    public IEnumerable<string> GetBackOfficeDocumentFields()
     {
         return new List<string>(base.GetBackOfficeDocumentFields()) { "parentID" };
     }
@@ -68,7 +68,7 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IInter
 ```csharp
 public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
 {
-    public List<string> GetBackOfficeMediaFields()
+    public IEnumerable<string> GetBackOfficeMediaFields()
     {
        return new List<string>(base.GetBackOfficeMediaFields()) { "parentID" };
     }
@@ -80,7 +80,7 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbra
 ```csharp
 public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,     IUmbracoTreeSearcherFields
 {
-    public List<string> GetBackOfficeMembersFields()
+    public IEnumerable<string> GetBackOfficeMembersFields()
     {
         return new List<string>(base.GetBackOfficeMembersFields()) { "parentID" };
     }
