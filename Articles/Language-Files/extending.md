@@ -54,7 +54,7 @@ Using core or custom language keys from your code:
 
 
 ### From .NET
-`ILocalizedTextService` is is used to localize strings, and is available through dependency injection. First inject the service, and then use the Localize method available in the namespace `Umbraco.Extensions` to localize the string with the format [area]/[key]:
+`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format [area]/[key]:
 
 ```csharp
 public MyClass(ILocalizedTextService textservice)
