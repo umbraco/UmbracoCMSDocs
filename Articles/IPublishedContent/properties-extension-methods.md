@@ -1,4 +1,5 @@
 ---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Reference/Querying/IPublishedContent/Properties/index.md"
 versionFrom: 9.0.0
 ---
 
