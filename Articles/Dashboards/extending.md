@@ -1,3 +1,8 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Dashboards/index.md"
+updated-links: false
+---
+
 # Dashboards
 Each section of the Umbraco backoffice has its own set of default dashboards.
 
