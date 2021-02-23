@@ -1,3 +1,8 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Language-Files/index.md"
+updated-links: false
+---
+
 # Language Files & Localization
 
 Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
