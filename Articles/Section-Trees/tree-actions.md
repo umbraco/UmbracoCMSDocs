@@ -1,6 +1,6 @@
 # Tree Actions
 
-Items in an Umbraco Tree can have associated Actions, the actions visible to the currently logged in user can be controlled via User Permissions.
+Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
 
 You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
 
@@ -45,7 +45,7 @@ When you pull back the AssignedPermissions for a user on a particular item, it i
 
 ### User Permission Codes
 
-Here's a list of the current User Permission codes, their alias, whether they can be permission assigned, their icon, and the JavaScript function they call... (if relevant)
+Here is a list of the current User Permission codes, their alias, whether they can be permission assigned, their icon, and the JavaScript function they call, if relevant.
 
 | Letter | Alias                | Can be Permission Assigned | Icon                | JavaScript Function                                                                                                                     |
 |--------|----------------------|----------------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
