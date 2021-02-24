@@ -1,6 +1,6 @@
 # Searchable Trees (ISearchableTree)
 
-When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permissions to access:
+When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permission to access:
 
 ![Content Section Dashboards](images/backoffice-search-v8.png)
 
@@ -136,4 +136,4 @@ namespace My.Website
 }
 ```
 
-This would then allow your custom implementation of ISearchableTree with TreeAlias 'Member' to be used when searching the Member Section Tree.
+This would then allow your custom implementation of ISearchableTree with TreeAlias 'member' to be used when searching the Member Section Tree.
