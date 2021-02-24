@@ -19,10 +19,10 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 ```csharp
 [Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
 public class FavouriteThingsTreeController : TreeController
-{
+{ }
 ```
 
-...would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco, inside a custom group called 'Favourites'
+The example above would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco, inside a custom group called 'Favourites'.
 
 The SortOrder controls the order of the custom tree within the Tree Group.
 
