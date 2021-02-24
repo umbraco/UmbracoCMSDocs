@@ -28,7 +28,7 @@ Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `p
 }
 ```
 
-... would create a new section in your Umbraco backoffice called 'My Favourite Things'.
+This would create a new section in your Umbraco backoffice called 'My Favourite Things'.
 
 When registering your section this way, it is added to the end of the collection of sections. But as more `package.manifest` files may do the same, the order of the additional sections depends on the order of which the `package.manifest` files are loaded. Registering your section this way doesn't allow further control of its order. 
 
@@ -42,10 +42,8 @@ namespace My.Website.Sections
 {
     public class MyFavouriteThingsSection : ISection
     {
-        /// <inheritdoc />
         public string Alias => "myFavouriteThings";
 
-        /// <inheritdoc />
         public string Name => "My Favourite Things";
     }
 }
@@ -106,7 +104,7 @@ You will also need to allow your current Umbraco User group access to this new C
 
 When your new custom section appears, you'll notice only the section 'Alias' is displayed inside square brackets. This is because Umbraco caters for Multiple Languages in the backoffice, and is looking for a translation file for the current backoffice culture, containing a translation key for your custom section alias.
 
-Create a /lang folder in the folder where you are creating the implementation for your custom section. If not create one in the App_Plugins folder eg. */App_Plugins/MyFavouriteThings/lang/*.
+Create a /lang folder in the folder where you are creating the implementation for your custom section. If you do not have one already, create a `/lang` folder within the folder where you are creating the implementation for your custom section, eg. `/App_Plugins/MyFavouriteThings/lang/`.
 
 It is worth knowing that the `/lang` folder does not have to be directly in the MyFavouriteThings folder, it can be nested deeper if you need it to be. The only requirement is that the folder is called lang. E.g. *~/App_Plugins/MyFavouriteThings/Some/Another/Lang/*.
 
