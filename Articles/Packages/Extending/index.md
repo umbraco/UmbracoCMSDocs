@@ -47,7 +47,7 @@ Content apps are almost like dashboards for content nodes that are intended to d
 
 This type of package can be a lot of things, and can include a lot of the other package types in it. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [UCommerce](https://our.umbraco.com/packages/website-utilities/ucommerce/), that includes an entire webshop module for Umbraco.
 
-## [Types of Packages](package-types.md)
+## [Types of Packages](./package-types.md)
 
 There are two common types of package for Umbraco; Package zip files and NuGet Packages.
 
@@ -59,11 +59,11 @@ This short tutorial will teach you how to create a package in the Umbraco backof
 
 This short tutorial will teach you how to create a NuGet package for your Umbraco code.
 
-## [Package Actions](Package-Actions/index.md)
+## [Package Actions](./package-actions.md)
 
 Package actions are actions you want to trigger when your package gets installed. 
 
-## [Uploading a Package to Our](Uploading-to-Our/index.md)
+## [Uploading a Package to Our](./uploading-to-our.md)
 
 Once you've created a package upload it on Our to share it with the community.
 
@@ -71,10 +71,10 @@ Once you've created a package upload it on Our to share it with the community.
 
  Dotnet tool for packing and deploying packages to Our. Can be used to automate updates to packages.
 
-## [Packages on Umbraco Cloud](Packages-on-Umbraco-Cloud/index.md)
+## [Packages on Umbraco Cloud](./packages-on-Umbraco-Cloud.md)
 
 Things you should know if you are developing for Umbraco Cloud.
 
-## [Maintaining Packages](Maintaining-Packages/index.md)
+## [Maintaining Packages](./maintaining-packages.md)
 
 Some guidance on how to maintain your package after release.

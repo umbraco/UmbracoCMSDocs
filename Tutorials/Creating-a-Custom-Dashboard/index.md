@@ -47,7 +47,7 @@ At the end of this guide, we should have a friendly welcoming dashboard displayi
 
 ## Setting up a plugin
 
-The first thing we must do is create a new folder inside our site's '/App_Plugins' folder. We will call it
+The first thing we must do is create a new folder inside our site's `/App_Plugins` folder. We will call it
 'CustomWelcomeDashboard'
 
 ## Creating the dashboard view
@@ -66,7 +66,7 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Similar to a property editor you will now register the dashboard in a package.manifest file, so add a new file inside the ~/App_Plugins/CustomWelcomeDashboard folder called package.manifest:
+Similar to a property editor you will now register the dashboard in a package.manifest file, so add a new file inside the `/App_Plugins/CustomWelcomeDashboard` folder called package.manifest:
 
 ```json
 {
@@ -99,7 +99,7 @@ You can specify multiple controls to appear on a particular tab, and multiple ta
 
 After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-You will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/lang/en-US.xml`
+You will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `/App_Plugins/CustomWelcomeDashboard/lang/en-US.xml`
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -117,7 +117,7 @@ You will need to create a *lang* folder in your custom dashboard folder and crea
 ![Custom Dashboard Welcome Message](images/welcomemessage-v8.png)
 
 :::note
-If you don't see the brackets disappearing - you may need to recycle your app pool. ~~Try adding a space at the end of a line in your appsettings.json file and then reload.~~
+If you don't see the brackets disappearing - you may need to recycle your app pool.
 :::
 
 ## Adding a bit of style
@@ -166,7 +166,7 @@ This stylesheet will now be loaded and applied to your dashboard. Add images and
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
 :::
 
-I~~f the title doesn't change colour, you may be running the site without debugging and therefore [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. To clear the CDF cache and get it to load in the new JavaScript and CSS, you need to increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config) and press save. Now you can reload the page and see the colourful title.~~
+If the title doesn't change colour, you may be running the site without debugging and therefore [Smidge](https://github.com/Shazwazza/Smidge) will be caching the CSS and JavaScript. To clear the Smidge cache and get it to load in the new JavaScript and CSS, you need to increment the version number of the `Umbraco:CMS:RuntimeMinification:version` config key in the appsettings.json file and press save. Now you can reload the page and see the colourful title.
 
 Hopefully, now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they log in to Umbraco.
 
@@ -413,8 +413,6 @@ and we should have a list of recently saved content and media:
 
 :::note
 The url /umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
-
-~~The `logResource` has a few bugs prior to version 8.1.4, so if you are on a lower version this may not give the expected result.~~
 :::
 
 ## I know what you want to do today

@@ -21,7 +21,7 @@ This section contains mostly meta data about the package and the creator. We wil
 | Url | https://umbraco.com | This url will be shown as the "packages url" when others install it. Will mostly be a Github repo or similar |
 | Version | 1.0.0 | This is automatically set to 1.0.0 but can be changed or increased manually if needed |
 | Icon Url | _Blank_ | Not a mandatory value, but will appear as the package icon different places in the backoffice if set |
-| Umbraco version | 8.2.0 | It will automatically select the Umbraco version you are currently using. This is then set as the compatible version for the package |
+| Umbraco version | 9.0.0 | It will automatically select the Umbraco version you are currently using. This is then set as the compatible version for the package |
 | Author | Your name | Here you get to take credit for your awesome work! |
 | Author URL | Your website or maybe a link to your Twitter profile | Will link to this from the author name certain places in the backoffice |
 | Contributors | _Blank_ | Here you can add the names of other contributors if you have any |
@@ -58,7 +58,7 @@ We will leave the `Package options view` selector empty, but in case you were wo
 
 ### The Package Actions section
 
-Here you can add package actions. There are a number of [default package actions](../Package-Actions/index.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions.md)
+Here you can add package actions. There are a number of [default package actions](./package-actions.md) and you can also create your own [custom package actions](./custom-package-actions.md)
 
 Finally after filling out all the info we can select `Create` to create the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
 
@@ -108,8 +108,8 @@ The 5 highlighted files were the ones the package contained that we created in t
       <license url="http://opensource.org/licenses/MIT">MIT License</license>
       <url>https://github.com/umbraco/customwelcomedashboard</url>
       <requirements type="Strict">
-        <major>8</major>
-        <minor>2</minor>
+        <major>9</major>
+        <minor>0</minor>
         <patch>0</patch>
       </requirements>
     </package>
