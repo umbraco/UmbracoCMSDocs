@@ -1,3 +1,8 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Backoffice-Tours/index.md"
+updated-links: false
+---
+
 # Backoffice tours
 
 Backoffice tours are a way to create helpful guides for how to work in the Umbraco backoffice.
