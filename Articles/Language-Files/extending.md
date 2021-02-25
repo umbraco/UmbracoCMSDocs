@@ -7,7 +7,7 @@ updated-links: false
 
 Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
-If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md).
+If you are a package developer, [see here for docs on how to include translations for your own package](../Packages/Extending/language-files-for-packages.md).
 
 ## Supported Languages
 Current languages that are included in the core are:
@@ -43,7 +43,7 @@ The core Umbraco language files are found at the following location within the U
 These language files are the ones shipped with Umbraco and should not be modified.
 
 ### Package language files
-If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md), package language files are located in:
+If you are a package developer, [see here for docs on how to include translations for your own package](../Packages/Extending/language-files-for-packages.md), package language files are located in:
 
     /App_Plugins/mypackage/lang/{language}.xml
 

@@ -1,6 +1,6 @@
 # Tutorial - Creating a Custom Dashboard
 
-~~_This tutorial was last tested on **Umbraco 8.11**_~~
+_This tutorial was last tested on **Umbraco 9.0.0-alpha003**_
 
 ## Overview
 
