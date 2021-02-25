@@ -382,5 +382,5 @@ If a custom configuration is required for a custom notification method, the foll
 }
 ```
 
-If you want to get the notification by email, SMTP settings should also be configured in the same JSON file.  
-For more on this see the [Configure SMTP settings]().
+If you want to get the notifications by email, SMTP settings should also be configured in the same JSON file.  
+For more on this see [Configure SMTP settings]().
