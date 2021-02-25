@@ -358,19 +358,29 @@ namespace Umbraco.Cms.Core.HealthChecks.NotificationMethods
 }
 ```
 
-TODO: Have to come back to this part and describe how it is done in netcore
-<!-- If custom configuration is required for a custom notification method, this can be placed in `HealthChecks.config`, with the `alias` XML attribute for the `notificationMethod` element matching that used on the class level attribute. Again, the following extract shows how the email notification method is configured:
+If a custom configuration is required for a custom notification method, the following extract can be merged in `appsettings.json` file, which will enable the email notification method to be configured:
 
-```xml
-<HealthChecks>
-    <notificationSettings enabled="true" firstRunTime="" periodInHours="24">
-    <notificationMethods>
-        <notificationMethod alias="email" enabled="true" verbosity="Summary">
-        <settings>
-            <add key="recipientEmail" value="alerts@mywebsite.tld" />
-        </settings>
-        </notificationMethod>
-    </notificationMethods>
-    </notificationSettings>
-</HealthChecks> -->
+```json
+{
+ "Umbraco": {
+    "CMS": {
+      "HealthChecks": {
+        "Notification": {
+          "Enabled": true,
+          "NotificationMethods": {
+            "email": {
+              "Enabled": true,
+              "Settings": {
+                "RecipientEmail" : "alerts@mywebsite.tld"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 ```
+
+If you want to get the notification by email, SMTP settings should also be configured in the same JSON file.  
+For more on this see the [Configure SMTP settings]().
