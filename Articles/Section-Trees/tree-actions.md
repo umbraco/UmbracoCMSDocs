@@ -1,3 +1,9 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/tree-actions.md"
+state: complete
+verified-against: alpha-3
+---
+
 # Tree Actions
 
 Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
