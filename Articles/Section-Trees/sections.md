@@ -1,3 +1,9 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/sections.md"
+state: complete
+verified-against: alpha-3
+---
+
 # Sections
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees.
