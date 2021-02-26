@@ -29,7 +29,7 @@ The form will save each page as you go and the package won't become live until y
 | Title | My Package | The name of your package |
 | Current version | x.x.x | The version of your package. This will display on the front end in the button (regardless of file name) |
 | Package Category | E.g. Backoffice Extension | The category this package should be put into. |
-| Package Description | This package will extend the backoffice. | What your package does. Be clear and to the point about what your package does. |
+| Package Description | This package will extend the backoffice. | Be clear and to the point about what your package does. |
 | License name | MIT License | As input in Umbraco |
 | License URL | http://opensource.org/licenses/MIT | As input in Umbraco |
 
