@@ -35,7 +35,7 @@ This section is used to determine which things the package should contain. We wi
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| Content | _Empty_ | Here you can include content - fx if you want to create a starter kit. Not relevant for this package though |
+| Content | _Empty_ | Here you can include content - e.g. if you want to create a starter kit. Not relevant for this package though. |
 | Document Types | _Empty_ | Similar to the Content picker above. Important to note that if you include content you will need to also pick all its dependencies in this and the next steps for it to be packaged together! |
 | Templates | _Empty_ | See `Document Types` above |
 | Stylesheets | _Empty_ | This will come from the wwwroot/css folder. If you have stylesheets you want to include from other locations you can do so at a later step |
