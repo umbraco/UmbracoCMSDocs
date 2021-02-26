@@ -25,12 +25,12 @@ public interface ISearchableTree : IDiscoverable
     /// <summary>
     /// Searches for results based on the entity type
     /// </summary>
-    /// <param name="query"></param>
-    /// <param name="pageSize"></param>
-    /// <param name="pageIndex"></param>
-    /// <param name="totalFound"></param>
+    /// <param name="query">The search term used for finding matching results.</param>
+    /// <param name="pageSize">The number of records to return for a page of results.</param>
+    /// <param name="pageIndex">The 0-based index for retrieving a page of search results.</param>
+    /// <param name="totalFound">Populated with the total number of results matching the provided search term.</param>
     /// <param name="searchFrom">
-    ///     A starting point for the search, generally a node id, but for members this is a member type alias
+    ///     The starting point for the search, generally a node ID, but for members this is a member type alias.
     /// </param>
     /// <returns></returns>
     IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
