@@ -60,7 +60,7 @@ The form will save each page as you go and the package won't become live until y
 | Property | Value | Note |
 | -------- | ----- | ---- |
 | This package is retired | _Tick_ | Tick this box if you are no longer actively maintaining the package. |
-| Retired message | I no longer have time to work on this package. | A quick message to explain why you are not maintaining the package. This will be shown to your Our package listing |
+| Retired message | I no longer have time to work on this package. | A quick message to explain why you are not maintaining the package. This will be shown to your Our package listing. |
 
 ## Package Files
 
