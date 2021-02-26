@@ -49,7 +49,7 @@ This type of package can be a lot of things, and can include a number of the oth
 
 ## [Types of Packages](./package-types.md)
 
-There are two common types of package for Umbraco; Package zip files and NuGet Packages.
+There are two common types of package for Umbraco: Package zip files and NuGet Packages.
 
 ## [Creating a Package](./creating-a-package.md)
 
