@@ -1,5 +1,9 @@
 ---
 v8-equivalent: "https://github.com/umbraco/UmbracoDocs/edit/main/Extending/Property-Editors/package-manifest.md"
+state: partial
+updated-links: false
+versionFrom: 9.0.0
+verified-against: alpha-3
 ---
 
 
