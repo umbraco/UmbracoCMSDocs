@@ -1,3 +1,7 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Content-Apps/index.md"
+---
+
 # Content Apps
 
 ## What are Content Apps
