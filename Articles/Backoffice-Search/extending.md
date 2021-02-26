@@ -1,4 +1,8 @@
-﻿# Backoffice Search
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Backoffice-Search/index.md"
+---
+
+# Backoffice Search
 
 The search facility of the Umbraco Backoffice allows the searching 'across sections' of different types of Umbraco entities, eg Content, Media, Members. However 'by default' only a small subset of standard fields are searched:
 

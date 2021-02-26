@@ -1,13 +1,18 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Dashboards/index.md"
+updated-links: false
+---
+
 # Dashboards
 Each section of the Umbraco backoffice has its own set of default dashboards.
 
-The dashboard area of Umbraco is used to display an 'editor' for the selected item in the tree. If no item is selected, for example when the section 'first loads', then the default set of section dashboards are displayed in the dashboard area, arranged over multiple tabs.
+The dashboard area of Umbraco is used to display an 'editor' for the selected item in the tree. If no item is selected, for example when the section is first loaded in the browser, then the default set of section dashboards are displayed in the dashboard area, arranged over multiple tabs.
 
 ## Registering your own Dashboard
 There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice:
 
 ### Registering with package.manifest
-Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the following json configuration pointing to your dashboard view:
+Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the following JSON configuration pointing to your dashboard view:
 
 ```json
 {
@@ -205,7 +210,7 @@ If your dashboard is unique to your Umbraco installation then you can modify the
 ```
 
 ### Specifying permissions
-You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear.
+You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or C#), you can see the alias of the section is used to control where the dashboard is allowed to appear.
 
 Further to this, within this section, you can control which users can see a particular dashboard based upon the *User Groups* they belong to. This is done by setting the 'access' permissions based on the *User Group* alias, you choose to deny or grant a particular User Group's access to the dashboard.
 

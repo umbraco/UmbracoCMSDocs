@@ -1,4 +1,5 @@
 ---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/edit/main/Reference/Querying/IPublishedContent/index.md"
 versionFrom: 9.0.0
 ---
 
