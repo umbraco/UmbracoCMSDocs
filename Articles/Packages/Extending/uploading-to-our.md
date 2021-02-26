@@ -53,7 +53,7 @@ The form will save each page as you go and the package won't become live until y
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| This package is open for collaboration | True/false | This currently sets an internal flag for the package and doesn't show any different on the front end |
+| This package is open for collaboration | True/false | This currently sets an internal flag for the package and doesn't lead to any difference in display of the package details to other users. |
 
 ### Package status
 
