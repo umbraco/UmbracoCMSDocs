@@ -37,7 +37,7 @@ The form will save each page as you go and the package won't become live until y
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| Package URL | https://umbraco.com | This url will be shown as the "packages url" when others install it. Will mostly be a Github repo or similar. |
+| Package URL | https://umbraco.com | This URL will be shown as the package's URL when others install it. Will likely be a Github repo, or similar. |
 | Demonstration URL | https://umbraco.com | If you have a video, blog, audio description of how your package works in more depth, this is the place to advertise it. |
 | Source code URL | https://umbraco.com | A link to the source code of the package. |
 | NuGet package URL | | A link to the NuGet listing of your package if available. |
