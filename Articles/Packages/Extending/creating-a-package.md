@@ -10,7 +10,7 @@ First go to the `Packages` section and select `Created` in the top right corner.
 
 ![Buttons to select for creating a package in the backoffice](images/creating-package-menu.png)
 
-On the `Create package` page there are 4 sections with different info to fill out. Some of the info is mandatory, most of it is not. First of all you should give the package a name at the top - we will call our dashboard the same as in the [tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
+On the `Create package` page there are 4 sections each with different information to fill out. Some of the info is mandatory, most of it is not. First of all you should give the package a name at the top - we will call our dashboard the same as in the [tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
 
 ### The Package Properties section
 
