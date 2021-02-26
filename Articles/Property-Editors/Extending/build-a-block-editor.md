@@ -1,5 +1,9 @@
 ---
 v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Property-Editors/Build-a-Block-Editor.md"
+state: partial
+updated-links: false
+versionFrom: 9.0.0
+verified-against: alpha-3
 ---
 # Build a Block Editor
 
