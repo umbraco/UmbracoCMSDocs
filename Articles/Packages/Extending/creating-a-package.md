@@ -136,6 +136,6 @@ The dashboard will show each user the most recent nodes they have saved.]]></rea
 You will notice that each of the fields we created is inside this XML file. All files have an `orgPath` attached to it - this is where it will try to move the file to when installing it. So, don't worry if you organized your package in folders and they are not so in the zip.
 
 :::warning
-It is very important to get the included files right, as all dependencies will be needed for something to work in your package.
+It is very important to get the list of files included correct, as all dependencies are required for the package features to work.
 On the other hand everything included here will be deleted on uninstall, so you also have to make sure not to include unnecessary things!
 :::

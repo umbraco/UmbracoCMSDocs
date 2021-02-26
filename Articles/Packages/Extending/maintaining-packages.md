@@ -48,7 +48,7 @@ Any forum you create will appear under the Package Files list on the package's p
 
 ## Find collaborators
 
-If you are a sole maintainer of a package then it's a good idea to find someone to help you. If you have accepted pull requests from people then why not ask them if they would like to collaborate.
+If you are the sole maintainer of a package then it's a good idea to find someone to help you. If you have accepted pull requests from people then why not ask them if they would like to collaborate?
 
 If someone requests a feature that you think is a good fit but you don't have the time, then ask that person if they would like to work with you to get it added.
 
@@ -64,7 +64,7 @@ You can assign other Our members to the 'team' for your package. Team members wi
 
 If your package should no longer be used (perhaps it is now too old, or it has been superseded by another one that you recommend instead), then you should update your package accordingly via [your packages profile page](https://our.umbraco.com/member/profile/packages/):
 
-At the bottom of the 'Package Details' form, tick to say 'Retired' and specify the reason for the retirement
+At the bottom of the 'Package Details' form, tick to say 'Retired' and specify the reason for the retirement.
 
 ![Flag package as retired](images/flag-as-retired.png)
 

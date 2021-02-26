@@ -5,8 +5,8 @@ In addition to utilizing the [built-in package actions](./package-actions.md), y
 ## When to use a Package Action
 
 A lot of the things you would use a package action for can also be accomplished in other ways - for example via a [composer](../../../Implementation/Composing/index.md) or [migration](../../Database/index.md). Package Actions have two important differences though:
-1. They only run on install and uninstall - no need to worry about startup cost for your site or add extra checks to see if it ran.
-1. You can ensure your package uninstalls cleanly - it has the `Undo()` method by default where you can clean up after yourself.
+1. They only run on install and uninstall - no need to worry about startup cost for your site or adding extra checks to see if it ran.
+2. You can ensure your package uninstalls cleanly - it has the `Undo()` method by default where you can clean up after yourself.
 
 So if you have something you know should only run on install or uninstall then package actions are a great fit!
 
@@ -128,4 +128,3 @@ Even though you can do whatever you want within a package action, most packages 
 
 - [UmbracoFileSystemProviders.Azure](https://github.com/umbraco-community/UmbracoFileSystemProviders.Azure/blob/master-umbraco-version-8/src/UmbracoFileSystemProviders.Azure.Installer/PackageActions.cs)
 - [Slimsy](https://github.com/Jeavon/Slimsy/blob/dev-v3/Slimsy/Packaging/PackageActions.cs)
-
