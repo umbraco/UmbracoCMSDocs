@@ -38,7 +38,7 @@ This section is used to determine which things the package should contain. We wi
 | Content | _Empty_ | Here you can include content - e.g. if you want to create a starter kit. Not relevant for this package though. |
 | Document Types | _Empty_ | Similar to the Content picker above. It is important to note that if you include content you will need to also pick all its dependencies in this and the next steps for them to be packaged together! |
 | Templates | _Empty_ | See `Document Types` above |
-| Stylesheets | _Empty_ | This will come from the wwwroot/css folder. If you have stylesheets you want to include from other locations you can do so at a later step |
+| Stylesheets | _Empty_ | These will come from the wwwroot/css folder. If you have stylesheets you want to include from other locations you can do so at a later step. |
 | Macros | _Empty_ | See `Document Types` above |
 | Languages | _Empty_ | See `Document Types` above - all text is hardcoded or within our own lang folder in this package, so this is not needed |
 | Dictionary | _Empty_ | See `Document Types` above |
