@@ -1,3 +1,10 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/Searchable-Trees/index.md"
+state: complete
+versionFrom: 9.0.0
+verified-against: alpha-3
+---
+
 # Searchable Trees (ISearchableTree)
 
 When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permission to access:
