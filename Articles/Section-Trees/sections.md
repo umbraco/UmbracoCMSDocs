@@ -61,7 +61,6 @@ namespace My.Website.Composers
 {
     public class SectionComposer : IUserComposer
     {
-        /// <summary>Compose.</summary>
         public void Compose(IUmbracoBuilder builder)
         {
             builder.Sections().Append<MyFavouriteThingsSection>();
