@@ -1,5 +1,9 @@
 ---
 v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Property-Editors/index.md"
+state: partial
+updated-links: false
+verified-against: alpha-3
+versionFrom: 9.0.0
 ---
 
 
