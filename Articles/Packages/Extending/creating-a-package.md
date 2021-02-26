@@ -20,7 +20,7 @@ This section contains mostly meta data about the package and the creator. We wil
 | -------- | ----- | ---- |
 | Url | https://umbraco.com | This URL will be shown as the package's URL when others install it. It will likely be a Github repository, or similar. |
 | Version | 1.0.0 | This is automatically set to 1.0.0 but can be changed as appropriate. |
-| Icon Url | _Blank_ | Not a mandatory value, but will appear as the package icon different places in the backoffice if set |
+| Icon Url | _Blank_ | Not a mandatory value, but will appear as the package's icon in different places in the backoffice if set. |
 | Umbraco version | 9.0.0 | It will automatically select the Umbraco version you are currently using. This is then set as the compatible version for the package |
 | Author | Your name | Here you get to take credit for your awesome work! |
 | Author URL | Your website or maybe a link to your Twitter profile | Will link to this from the author name certain places in the backoffice |
