@@ -1,3 +1,11 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/trees.md"
+state: partial
+updated-links: false
+verified-against: alpha-3
+versionFrom: 9.0.0
+---
+
 # Trees
 
 This section describes how to work with and create trees with Umbraco APIs.
