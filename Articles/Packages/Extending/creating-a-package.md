@@ -133,7 +133,7 @@ The dashboard will show each user the most recent nodes they have saved.]]></rea
 </umbPackage>
 ```
 
-You will notice that each of the fields we created is inside this XML file. All files have an `orgPath` attached to it - this is where it will try to move the file to when installing it. So, don't worry if you organized your package in folders and they are not so in the zip.
+You will notice that the values for each of the fields we provided are found inside this XML file. Each file has an `orgPath` element associated with it - this is where the file will be moved to when the package is installed. So, don't worry if you organised your package in folders and they are not visible in this structure within the zip archive.
 
 :::warning
 It is very important to get the list of files included correct, as all dependencies are required for the package features to work.
