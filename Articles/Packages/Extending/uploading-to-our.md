@@ -47,7 +47,7 @@ The form will save each page as you go and the package won't become live until y
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| Google Analytics code | UA-11111111-1 | This will tie in stats about your package into your Google Analytics account.
+| Google Analytics code | UA-11111111-1 | This will include statistics from your package into your Google Analytics account.
 
 ### Collaboration
 
