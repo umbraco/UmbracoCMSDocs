@@ -1,3 +1,11 @@
+---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Health-Check/index.md"
+versionFrom: 9.0.0
+state: partial
+updated-links: false
+verified-against: alpha-3
+---
+
 # Health Check
 
 The Settings section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.
