@@ -29,7 +29,7 @@ This section contains mostly meta data about the package and the creator. We wil
 | Url | https://umbraco.com | This URL will be shown as the package's URL when others install it. It will likely be a Github repository, or similar. |
 | Version | 1.0.0 | This is automatically set to 1.0.0 but can be changed as appropriate. |
 | Icon Url | _Blank_ | Not a mandatory value, but will appear as the package's icon in different places in the backoffice if set. |
-| Umbraco version | 9.0.0 | It will automatically select the Umbraco version you are currently using. This is then set as the compatible version for the package |
+| Umbraco version | 9.0.0 | This will automatically select the Umbraco version you are currently using and is set as the compatible version for the package. |
 | Author | Your name | Here you get to take credit for your awesome work! |
 | Author URL | Your website or maybe a link to your Twitter profile | This will be linked to from the author name when displayed in the backoffice. |
 | Contributors | _Blank_ | Here you can add the names of other contributors if you have any. |
@@ -76,7 +76,7 @@ When you download and then open the zip package you will find that it looks like
 
 ![Content of a zip package](images/zip-package.png)
 
-The 5 highlighted files were the ones the package contained that we created in the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md), however there is another file here called `package.xml` - so let's take a look at that - it looks like this:
+The 5 highlighted files contained in the package are the ones that we created in the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). However, there is another file here called `package.xml` - so let's take a look at that. It looks like this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
