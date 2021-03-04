@@ -1,10 +1,18 @@
+---
+versionFrom: 9.0.0
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Maintaining-Packages/index.md"
+verified-against: alpha-3
+state: complete
+updated-links: true
+---
+
 # Maintaining packages
 
 Once you've created and published your package, what's involved in its ongoing maintenance?
 
 ## Keep it up-to-date
 
-When a new version of Umbraco is released you should test your package on this latest version to confirm it still works. 
+When a new version of Umbraco is released you should test your package on this latest version to confirm it still works.
 
 ### If the package still works
 
@@ -16,7 +24,7 @@ It would also be helpful to ensure that the 'Package Compatibility' details are 
 
 Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](./creating-a-package.md) article for guidelines on creating the package zip file using the backoffice.  
 
-To publish your new version on Our, visit [your packages profile page](https://our.umbraco.com/member/profile/packages/) and select the package that you are updating. 
+To publish your new version on Our, visit [your packages profile page](https://our.umbraco.com/member/profile/packages/) and select the package that you are updating.
 
 - On the 'Package Details' section of the form update the 'Current Version'. You should also add some details about which versions of your package are for which version of Umbraco in the 'Package Description'. For example:
 

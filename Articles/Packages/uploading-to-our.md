@@ -1,3 +1,11 @@
+---
+versionFrom: 9.0.0
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Uploading-to-Our/index.md"
+verified-against: alpha-3
+state: complete
+updated-links: true
+---
+
 # Uploading to Our
 
 This document shows you how to upload your package to Our and share it with the world.
@@ -8,7 +16,7 @@ To get started you first need to have an account on Our. Don't have an account? 
 Our uses a karma system where you get positive karma for answering forum posts, etc. To limit spam you will need to earn a little bit of karma before you can upload a package. Otherwise you can reach out to the [Umbraco support team](https://umbraco.com/contact-us/), who can help you out.
 :::
 
-### Creating your package
+## Creating your package
 
 Before you can upload your package, you first have to create your package. Read over the [Creating a Package](./creating-a-package.md) article.
 
@@ -18,10 +26,10 @@ To get started head over to your [profile page](https://our.umbraco.com/member/p
 
 ![Your packages profile page](images/PackagesPage.png)
 
-You may notice if you followed the [Creating a Package](../Creating-a-Package/) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
+You may notice if you followed the [Creating a Package](./Creating-a-Package/) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
 
 The form will save each page as you go and the package won't become live until you finish the process and mark it live on the final page. This means you can come back and finish your package submission at any time.
-	
+
 ## Package Details
 
 | Property | Value | Note |
@@ -72,7 +80,7 @@ This is where you upload your package zip along with any other files you'd like 
 | Type | Package | This determines where the file gets displayed within your package details page. |
 | Umbraco Version | _Multiple checks_ | It's important to only mark the versions that the file is applicable to. |
 | .NET Framework Version | 4.7.2 | Typically the framework you developed against. If your package doesn't have any code files then select the earliest framework. |
-	
+
 ### Images
 
 Images really show off your package and let people see what it can do at a glance. Select the image to upload. Marking an image as the current image will make it the icon for the package and display on the list as well as on the details page.

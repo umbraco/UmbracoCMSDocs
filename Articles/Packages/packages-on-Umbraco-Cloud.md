@@ -1,9 +1,18 @@
+---
+versionFrom: 9.0.0
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Packages-on-Umbraco-Cloud/index.md"
+verified-against: alpha-3
+state: outline
+updated-links: false
+---
+
 ## Revisit this once deploy has been ported to netcore for valueconnectors section.
 
 # Packages on Umbraco Cloud
 
 If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of.
 The two most important things to know about are
+
 - [How you should store data on Cloud](#storing-data)
 - [Using custom property editors with Deploy](#valueconnectors)
 
@@ -34,7 +43,8 @@ You could consider creating Umbraco schema only during a package action, and the
 
 You may sometimes choose to save data in a file. Could be a seperate config file for your package or a [config transform file](../../..//Umbraco-Cloud/Set-Up/Config-Transforms/index.md) to add an app setting to the web.config.
 If you do this be aware of two things:
-1.  If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/33) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
+
+1. If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/33) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
 1. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](../../..//Umbraco-Cloud/Set-Up/Config-Transforms/index.md).
 
 ## ValueConnectors
@@ -53,7 +63,7 @@ Then in the template you have something like this:
 <img src="@Umbraco.Media(Model.Value("BadMedia")).Url" />
 ```
 
-Renders the image perfectly! 
+Renders the image perfectly.
 
 However now you do a content transfer to your Cloud environment, and one of three things will happen:
 
@@ -110,12 +120,12 @@ Full Visual Studio solution
 Running on http://localhost:6240/ (Randomly generated)
 Has the ValueConnector in a class library that is built to a dll and copied to the websites bin on build
 
-**Site 2**: 
+**Site 2**:
 A website served through VS Code (Could be IIS or anything else, doesn't matter)
 Running on http://localhost:17025/ (Randomly generated)
 Has the ValueConnector dll in the bin from the clone
 
-Now we will set up these two identical sites to transfer content between eachother. 
+Now we will set up these two identical sites to transfer content between eachother.
 
 To do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site 2's url (http://localhost:17025/ in my case).
 Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
@@ -126,18 +136,18 @@ At this point you should be able to go to the backoffice of either environment a
 
 At this point we haven't done anything to the ValueConverter yet, other than return the original value. Now we will attach Visual Studio to the IIS processes and try a transfer to see what it sends along.
 
-* Go to Visual Studio
-* Hit "Attach to Process" (default ALT + CTRL + P)
-* Choose your two IIS processes
-* Add breakpoints in the `ToArtifact` and `FromArtifact` methods
-* Go to the backoffice in Site 1
-* Try to do a content transfer to live (Site 2).
+- Go to Visual Studio
+- Hit "Attach to Process" (default ALT + CTRL + P)
+- Choose your two IIS processes
+- Add breakpoints in the `ToArtifact` and `FromArtifact` methods
+- Go to the backoffice in Site 1
+- Try to do a content transfer to live (Site 2).
 
 It will hit your breakpoint, and if you continue you will then get an error. On the breakpoint you can see why the error occurs. It should look like this:
 
 ![Hitting the breakpoint](images/hitting-breakpoints.png)
 
-Here you can see that value is null, and if you try to return `value.ToString()` you will get a null exception. 
+Here you can see that value is null, and if you try to return `value.ToString()` you will get a null exception.
 
 We will change the `ToArtifact` method a little:
 
@@ -169,8 +179,8 @@ You may have realised at this point that the flow is something like this:
 1. Site 1 content transfer initated
 1. Property data is fetched on Site 1
 1. Hit the `ToArtifact` method on Site 1
-1. Send to Site 2 
-1. Hit the `FromArtifact` method on Site 2 
+1. Send to Site 2
+1. Hit the `FromArtifact` method on Site 2
 1. Property data is saved on Site 2
 
 So in our case, what we want to do is to ensure the ID from Site 1 is changed during the transfer to match what the new ID in Site 2 is. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transfered to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
@@ -179,7 +189,7 @@ So in our case, what we want to do is to ensure the ID from Site 1 is changed du
 
 In this example there would be no way for Deploy to know to also transfer the image. We assume that you would transfer all content and images to ensure it is on the target environment under a different ID.
 
-That is not a good assumption, and you may have noticed that there is a parameter on the `ToArtifact` method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`. 
+That is not a good assumption, and you may have noticed that there is a parameter on the `ToArtifact` method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`.
 :::
 
 In order to add the image as a dependency for the item being transferred, we will update the code in the `ToArtifact` method:

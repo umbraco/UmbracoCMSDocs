@@ -1,3 +1,11 @@
+---
+versionFrom: 9.0.0
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Language-Files-For-Packages/index.md"
+verified-against: alpha-3
+state: complete
+updated-links: true
+---
+
 # Language file for packages
 
 While the Umbraco Core ships with its own set of language files, package authors who would like their UI to be multi-lingual, will need to include their own set of language files as part of their package distribution.

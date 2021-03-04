@@ -1,10 +1,18 @@
+---
+versionFrom: 9.0.0
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Creating-a-Package/index.md"
+verified-against: alpha-3
+state: partial
+updated-links: false
+---
+
 # Creating a Package
 
 The goal of this tutorial will be to take something that extends Umbraco and create it as a package. The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). The process will be the same for most packages so feel free to follow along with something else.
 
 ## Creating a package in the backoffice
 
-If you have something you want to make into a package, you can do so through the Umbraco backoffice. 
+If you have something you want to make into a package, you can do so through the Umbraco backoffice.
 
 First go to the `Packages` section and select `Created` in the top right corner. Next, choose the `Create package` button.
 

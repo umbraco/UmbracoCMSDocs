@@ -1,3 +1,11 @@
+---
+versionFrom: 9.0.0
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/index.md"
+verified-against: alpha-3
+state: complete
+updated-links: true
+---
+
 # Packages
 
 ## What is a Package?
@@ -16,11 +24,11 @@ An Umbraco Package can be many things, but are generally characterized by:
 
 Packages provide a wide variety of functionality, and can often span multiple categories. In general, though, the functionality they provide fall into these main groups:
 
- - [Schema Extensions](#schema-extensions)
- - [Management Extensions](#management-extensions)
- - [Starter Kits](#starter-kits)
- - [Content Apps](#content-apps)
- - [Integration Extensions](#integration-extensions)
+- [Schema Extensions](#schema-extensions)
+- [Management Extensions](#management-extensions)
+- [Starter Kits](#starter-kits)
+- [Content Apps](#content-apps)
+- [Integration Extensions](#integration-extensions)
 
 #### Schema Extensions
 
@@ -33,7 +41,7 @@ A good example of a management extension package is [Diplo God Mode](https://our
 
 #### Starter Kits
 
-Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some quite specialised starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used features. 
+Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some quite specialised starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used features.
 
 #### Content Apps
 
