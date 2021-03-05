@@ -1,6 +1,13 @@
-# Health check: Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security Header (HSTS))
+---
+versionFrom: 9.0.0
+state: complete
+updated-links: true
+verified-against: alpha-3
+---
 
-_Checks if your site, when running with HTTPS, contains the Strict-Transport-Security Header (HSTS)._
+# Health check: Click-Jacking Protection
+
+_Checks if your site is allowed to be IFRAMEd by another site and thus would be susceptible to click-jacking._
 
 ## How to fix this health check
 
@@ -17,7 +24,7 @@ public class Startup
 {
     public void Configure(IApplicationBuilder app)
     {
-        app.UseHsts(options => options.MaxAge(days: 30));
+        app.UseXfo(options => options.Deny());
 
         ...
     }
@@ -26,7 +33,7 @@ public class Startup
 
 ### Adding Click-Jacking Protection using manual middleware
 
-If you don't like to have a dependency on third party libraries. You can add the following custom middleware to the request pipeline.
+If you don't like to have a dependency on a third party library, you can add the following custom middleware to the request pipeline instead.
 
 ```cs
 public class Startup
@@ -35,7 +42,7 @@ public class Startup
     {
         app.Use(async (context, next) =>
         {
-            context.Response.Headers.Add("Strict-Transport-Security", "max-age=2592000");
+            context.Response.Headers.Add("X-Frame-Options", "DENY");
             await next();
         });
 

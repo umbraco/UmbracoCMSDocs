@@ -21,7 +21,6 @@ Create a 'TreeController' class in C#. A new controller which inherits from the 
 
 Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
 
-
 **For example**
 
 ```csharp
@@ -35,9 +34,11 @@ The example above would register a custom tree with a title 'Favourite Things Na
 The SortOrder controls the order of the custom tree within the Tree Group.
 
 ### Tree Groups
+
 Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
 
 If you add your own alias, you'll need to add a translation key to `config/lang/en-US.user.xml` to avoid the alias appearing as the header in [square brackets] eg
+
 ```xml
 <language>
   <area alias="treeHeaders">
@@ -145,8 +146,6 @@ protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStr
 
 ![Favourite Things Custom Tree](images/favourite-things-custom-tree-v8.png)
 
-
-
 ### Responding to Tree Actions
 
 The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
@@ -197,7 +196,6 @@ Our Tree Action View would then be wired to the loaded controller using the ng-c
 
 ![Delete Raindrops on Roses](images/delete-raindrops-on-roses-v8.png)
 
-
 Take a look at the [umbEditor directives in the backoffice API Documentation](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
@@ -239,6 +237,7 @@ protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStr
     return root;
 }
 ```
+
 The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the `PluginController` attribute, clicking the root node would now request `/App_Plugins/favouriteThing/backoffice/favouritistThingsAlias/overview.html`. If you are not using the `PluginController` attribute, then the request would be to `/umbraco/views/favouritistThingsAlias/overview.html`.
 
 ![Favourite Thing Custom Tree](images/favourite-things-custom-tree-v8.png)

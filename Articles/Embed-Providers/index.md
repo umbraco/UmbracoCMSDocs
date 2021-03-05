@@ -1,5 +1,9 @@
 ---
 v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Embedded-Media-Provider/index.md"
+versionFrom: 9.0.0
+verified-against: alpha-3
+state: complete
+
 ---
 
 # Embed Providers
@@ -115,6 +119,7 @@ namespace MyNamespace
 }
 
 ```
+
 #### Register the provider with the OEmbedProvidersCollection
 
 Create a new C# class that implements `IUserComposer` and add append your new provider to the EmbedProvidersCollection:
@@ -183,6 +188,7 @@ namespace MyNamespace
 }
 
 ```
+
 Here the markup to embed has been manually constructed based upon the iframe video player, no request to an Api endpoint is made...
 
 #### Register the provider with the OEmbedProvidersCollection
@@ -203,4 +209,5 @@ namespace MyNamespace
 }
 
 ```
+
 Now editors can embed Azure Media video Urls in the format: `//amssamples.streaming.mediaservices.windows.net/3b970ae0-39d5-44bd-b3a3-3136143d6435/AzureMediaServicesPromo.ism/manifest`.

@@ -1,5 +1,9 @@
 ---
 v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Backoffice-Search/index.md"
+versionFrom: 9.0.0
+state: partial
+updated-links: false
+verified-against: alpha-3
 ---
 
 # Backoffice Search
@@ -41,7 +45,6 @@ public class MyComposer : IUserComposer
     }
 }
 ```
-
 
 ### All Node types
 

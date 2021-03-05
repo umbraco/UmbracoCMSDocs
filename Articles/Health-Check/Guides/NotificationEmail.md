@@ -1,3 +1,10 @@
+---
+versionFrom: 9.0.0
+state: complete
+updated-links: true
+verified-against: alpha-3
+---
+
 # Health check: Notification Email Settings
 
 _If notifications are used, the 'from' email address should be specified and changed from the default value._

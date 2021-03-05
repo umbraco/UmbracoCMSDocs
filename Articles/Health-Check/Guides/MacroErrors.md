@@ -1,3 +1,10 @@
+---
+versionFrom: 9.0.0
+state: complete
+updated-links: true
+verified-against: alpha-3
+---
+
 # Health check: Macro errors
 
 _Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely._

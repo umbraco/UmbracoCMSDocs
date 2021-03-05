@@ -1,3 +1,10 @@
+---
+versionFrom: 9.0.0
+state: complete
+updated-links: true
+verified-against: alpha-3
+---
+
 # Health check: Debug Compilation Mode
 
 _Leaving debug compilation mode enabled can severely slow down a website and take up more memory on the server._

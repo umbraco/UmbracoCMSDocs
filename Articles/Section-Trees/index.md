@@ -2,6 +2,7 @@
 v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/index.md"
 state: complete
 verified-against: alpha-3
+versionFrom: 9.0.0
 ---
 
 # Sections & Trees

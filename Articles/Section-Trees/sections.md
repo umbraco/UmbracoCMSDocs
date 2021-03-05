@@ -2,6 +2,7 @@
 v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/sections.md"
 state: complete
 verified-against: alpha-3
+versionFrom: 9.0.0
 ---
 
 # Sections
@@ -21,6 +22,7 @@ Next we need to create a manifest where we'll include some basic configuration f
 There are two approaches to registering a custom section to appear in the Umbraco Backoffice:
 
 ### Registering with package.manifest
+
 Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `package.manifest`. In this new file, copy the code snippet below and save it.
 
 ```json
@@ -39,6 +41,7 @@ This would create a new section in your Umbraco backoffice called 'My Favourite 
 When registering your section this way, it is added to the end of the collection of sections. But as more `package.manifest` files may do the same, the order of the additional sections depends on the order of which the `package.manifest` files are loaded. Registering your section this way doesn't allow further control of its order. 
 
 ### Registering with C# Type
+
 By creating a C# class that implements `ISection` from `Umbraco.Core.Models.Sections`:
 
 ```csharp

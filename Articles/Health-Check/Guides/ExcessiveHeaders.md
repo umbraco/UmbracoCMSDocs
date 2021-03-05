@@ -1,3 +1,10 @@
+---
+versionFrom: 9.0.0
+state: complete
+updated-links: true
+verified-against: alpha-3
+---
+
 # Health check: Excessive Headers
 
 _Checks to see if your site is revealing information in its headers that gives away unnecessary details about the technology used to build and host it._
