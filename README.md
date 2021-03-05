@@ -26,26 +26,31 @@ To keep track of the state of the articles added to this repository, we will be 
 Here's an overview of the tags that we will be using.
 
 **v8-equivalent**
+
 A link to the Umbraco 8 version of the article. Should link directly to the file on Github as opposed to linking to Our. Not used on new articles written for the new version.
 
 `v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/README.md"`
 
 **state**
+
 Is that article complete? Is it only partially done, or is it simply an outline as a starting point?
 
 `state: partial | complete | outline`
 
 **verified-against**
+
 Define which Umbraco 9 release the article has been verified against.
 
 `verified-against: alpha-3 | beta-1`
 
 **versionFrom**
+
 Will determine the Umbraco version from which the article i valid.
 
 `versionFrom: 9.0.0`
 
 **updated-link**
+
 As we start to migrate the documentation to Umbraco 9, it will not be possible to convert all links in the articles on the first go. This tag should be used to indicate whether the links in the article has been updated or not.
 
 `updated-links: true | false`
