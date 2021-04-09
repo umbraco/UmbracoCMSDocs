@@ -47,6 +47,9 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [Demystifying config in Umbraco .NET Core](https://24days.in/umbraco-cms/2020/umbraco-dotnet-core-config/)
 * [Rick Butterfield: Umbraco Unicore first impressions](https://rickbutterfield.com/blog/umbraco-unicore-impressions)
 * [Greystate: Trying Out the .NET Core Umbraco Alpha Release](https://greystate.dk/log/2020/09/04/umbraco-net-core-alpha/)
+* [Poornima Nayar: Having a look at Umbraco Unicore Alpha 3 Release](https://poornimanayar.co.uk/blog/having-a-look-at-umbraco-unicore-alpha-3-release/)
+* [Poornima Nayar: Web API in Umbraco Unicore Alpha 3](https://poornimanayar.co.uk/blog/web-api-in-umbraco-unicore-alpha-3/)
+* [Poornima Nayar: Umbraco Unicore Alpha 4 - Dashboards and Sections](https://poornimanayar.co.uk/blog/umbraco-unicore-alpha-4-dashboards-and-sections/)
 
 ### Other
 
