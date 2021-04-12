@@ -8,7 +8,7 @@ updated-links: true
 
 # Install Umbraco with Visual Studio Code
 
-Follow these steps to be up and running with VS Code quickly. The benefit of using VS Code is that it is super quick to get up and running.
+Follow these steps to set up an Umbraco solution with VS Code. The benefit of using VS Code is that it is super quick to get up and running.
 
 ## Download and Launch VS Code
 
