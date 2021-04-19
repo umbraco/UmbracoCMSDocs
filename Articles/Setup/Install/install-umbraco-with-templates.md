@@ -27,6 +27,7 @@ Umbraco Package              umbracopackage           [C#]              Web/CMS/
 To get **help** on a project template with `dotnet new` run the following command:  
 `dotnet new umbraco -h`
 
+From that command's output, you will get a better understanding of what are the default template options, as well as those command-line flags specific to Umbraco that you can use (as seen below): 
 ```none
 Usage: new [options]
 
