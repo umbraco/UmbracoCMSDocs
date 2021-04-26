@@ -14,19 +14,6 @@ You can use the **Unattended installs** feature to allow for quick installation 
 
 This article will give you the details you need to install Umbraco unattended.
 
-:::warning
-    ????
-:::
-<!--- Would we have any warnings? below is what we had before
-:::warning
-When installing Umbraco using the unattended install feature, you will not be able to access the Umbraco backoffice once the installation has completed, as no password has been set for the default user.
-
-Instead, you will need to configure an external login provider or set a password for the user in some other way.
-
-Support for adding users through the unattended installation process will be added at a later point.
-:::
--->
-
 ## Get the correct version of Umbraco
 
 Since its beginning **Umbraco version 9** supports this feature.
@@ -40,23 +27,14 @@ As you will not be running through the installation wizard when using the unatte
 * Set up and configure a new database - see [Requirements](../Requirements/#hosting) for details.
 * Add the connection string using configuration.
 
-Example:
+Example in appsettings.json
 
-```
-
-```
-
-## Define the correct Umbraco version
-
-In order for Umbraco to be installed correctly, you will need to specify the exact version number before initializing the installation.
-
-The version needs to be specified using ...
-
-Example:
-
-```
-
-
+```json
+{
+  "ConnectionStrings": {
+    "umbracoDbDSN": "server=localhost;database=UmbracoUnicore;user id=sa;password='P@ssw0rd'"
+  }
+}
 ```
 
 ## Enable the unattended installs feature
@@ -65,17 +43,30 @@ The unattended installs feature is disabled by default and in order to enable it
 
 ```json
 {
-    "Unattended": {
-                    "InstallUnattended": true,
-                    "UnattendedUserName": "FRIENDLY_NAME",
-                    "UnattendedUserEmail": "EMAIL",
-                    "UnattendedUserPassword": "PASSWORD"
-                }
+  "Umbraco": {
+    "CMS": {
+      "Unattended": {
+        "InstallUnattended": true,
+        "UnattendedUserName": "FRIENDLY_NAME",
+        "UnattendedUserEmail": "EMAIL",
+        "UnattendedUserPassword": "PASSWORD"
+      }
+    }
+  }
 }
-
 ```
-
 Remember to set the value of `InstallUnattended` to `true`.
+
+Alternatively you may set your configuration with Environment Variables or other means
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#environment-variables
+
+The keys for this would then be as follows:
+```
+Umbraco__CMS_Unattended__InstallUnattended
+Umbraco__CMS_Unattended__UnattendedUserName
+Umbraco__CMS_Unattended__UnattendedUserEmail
+Umbraco__CMS_Unattended__UnattendedUserPassword
+```
 
 ## Initialize the unattended install
 
@@ -92,11 +83,11 @@ Depending on your preferences, you can use any type of configuration to specify 
 
 ```c#
 #if DEBUG
-                .ConfigureAppConfiguration(config
-                    => config.AddJsonFile(
-                            "appsettings.Local.json",
-                            optional: true,
-                            reloadOnChange: true))
+  .ConfigureAppConfiguration(config
+    => config.AddJsonFile(
+      "appsettings.Local.json",
+      optional: true,
+      reloadOnChange: true))
 #endif
 ```
 
@@ -105,7 +96,7 @@ Having intellisense will help you to easily add your connection string and infor
 ```json
 {
     "ConnectionStrings": {
-        "umbracoDbDSN": "CONNECTION_STRING"
+        "umbracoDbDSN": "server=localhost;database=UmbracoUnicore;user id=sa;password='P@ssw0rd'"
     },
     "Umbraco": {
         "CMS": {
