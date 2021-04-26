@@ -112,7 +112,7 @@ Having intellisense will help you to easily add your connection string and infor
 ```
 
 ## More support
-We have added support for unattended installs with Name, Email & Password & Connection String as CLI params & in Visual Studio. There you can filling your information as follows:
+We have added support for unattended installs with Name, Email and Password, and Connection String as CLI params, which are also available in Visual Studio. There you can fill in your information as follows:
 
 ### CLI
 
