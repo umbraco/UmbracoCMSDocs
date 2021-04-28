@@ -1,12 +1,12 @@
 ---
-versionFrom: 8.0.0
-meta.Title: "Umbraco File System Providers"
-meta.Description: "A guide to creating custom file systems in Umbraco"
+v8-equivalent: "https://our.umbraco.com/documentation/Extending/FileSystemProviders/"
+versionFrom: 9.0.0
+verified-against: beta-1
 ---
 
 # Custom file systems (IFileSystem)
 
-## MediaFileSystem
+## Media Filesystem
 By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the storage location of the media archive (wwwroot/media).
 
 This can be configured during composition:
@@ -18,7 +18,7 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
-using Umbraco.Infrastructure.DependencyInjection;
+using Umbraco.Cms.Infrastructure.DependencyInjection;
 
 namespace UmbracoExamples.Composition
 {
@@ -29,23 +29,30 @@ namespace UmbracoExamples.Composition
             builder.SetMediaFileSystem((factory) =>
             {
                 IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-                var folderLocation = "~/custommediafolder";
+                var folderLocation = "~/CustomMediaFolder";
+                var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
+                var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
 
                 return new PhysicalFileSystem(
                     factory.GetRequiredService<IIOHelper>(),
                     hostingEnvironment,
                     factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-                    hostingEnvironment.MapPathWebRoot(folderLocation),
-                    hostingEnvironment.ToAbsolute(folderLocation));
+                    rootPath,
+                    rootUrl);
             });
         }
     }
 ```
-The `IHostingEnvironment` maps the web root path to the 'virtual Root' location of the Media folder (wwwroot). The ~ is therefore important!
 
-This works well if you want a custom location within the wwwroot folder of you project, but if you want to store it outside wwwroot, there is an extra step:
+When creating a PhyscialFileSystem it takes some dependencies like IIOHelper, but the last two parameters are what we're interested in. The rootPath is where your media will be stored on the disk, since netcore by default store files in the wwwroot, we must put our desired folder somewhere within wwwroot, to ensure that we use `hostingEnvironment.MapPathWebRoot(~/CustomMediaFolder)`, the ~ will be mapped to your wwwroot folder, so the final rootPath will be your/project/path/wwwroot/CustomMediaFolder, the ~ is therefore important!
 
-In the `configure` method in startup.cs register a new static file location:
+The other part of the puzzle is the rootUrl, which is the base URL your media files will be served from, so in this case, your image URL could look something like mysite.com/CustomMediaFolder/MyAwesomePicture.png, again the ~ is important. Another thing worth mentioning with the rootUrl is that it must be the same as the folder location, otherwise, you will get 404's for your images.
+
+This is all great if you want to change the location within the wwwroot folder of your project, but what if you want to store the media files outside wwwroot? This is fortunately possible but requires an extra step.
+
+As mentioned netcore by default store static files, such as media and css, in the wwwroot folder, but we can register an additional location in the configure section of our startup
+
+In the `configure` method in startup.cs register a new static file location like so:
 
 ```c#
 public void Configure(IApplicationBuilder app)
@@ -59,12 +66,12 @@ public void Configure(IApplicationBuilder app)
     });
 }
 ```
-The PhysicalFileProvider takes a single parameter, the **RootPath** - the rooted, filesystem path, using directory separator chars, NOT ending with a separator // eg "c:" or "c:\path\to\site" or "\\server\path", the safest way to achieve this is using Path.Combine.
+The PhysicalFileProvider takes a single parameter, the **RootPath** - the rooted, filesystem path, using directory separator chars, NOT ending with a separator // eg "c:" or "c:\path\to\site" or "\\server\path", the safest way to achieve this is using `Path.Combine`.
 
 
 You also have to specify the  **RequestPath** - the relative url, where the media will be served, using url separator chars, NOT ending with a separator / eg "" or "/Views" or "/Media".
 
-Now you can use your newly registered static file location, as if it was wwwroot:
+Now you can use your newly registered static file location as if it was wwwroot. Notice how you no longer need to use `hostingEnvironment.MapPathWebRoot(folderLocation)`, since you're no longer trying to map the location to somewhere within wwwroot, but instead use your newly registered static file location.
 
 ```csharp
 public void Compose(IUmbracoBuilder builder)
@@ -72,36 +79,43 @@ public void Compose(IUmbracoBuilder builder)
     builder.SetMediaFileSystem((factory) =>
     {
         IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+        var rootPath = Path.Combine("C:", "storage", "umbracoMedia");
+        var rootUrl = hostingEnvironment.ToAbsolute("/CustomPath");
 
         return new PhysicalFileSystem(
             factory.GetRequiredService<IIOHelper>(),
             hostingEnvironment,
             factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-            Path.Combine("D:", "storage", "umbracoMedia"),
-            hostingEnvironment.ToAbsolute("/CustomPath"));
+            rootPath,
+            rootUrl);
     });
 }
 ```
-Note that the last two parameters, your RootPath and RequestPath must be the same as what you used when defining your static file location.
+
+This is almost the same as when registering a location within the wwwroot folder, the only difference is that rootPath is now set to the path we gave the `PhysicalFileProvider` and the rootUrl is the same as we set as the `RequestPath` in the `StaticFileOption`.
+
+Our media is now stored in C:\storage\umbracoMedia, and is served from the base URL /CustomPath, so an image URL will look something like mysite.com/CustomPath/MyAwesomePicture.png
 
 ### IFileSystem
 
-`PhysicalFileSystem` implements the `IFileSystem` interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar.
+`PhysicalFileSystem` implements the `IFileSystem` interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar. You replace the media filesystem using the `SetMediafileSystem` method in a composer like shown in the MediaFileSystem section, but instead of returning a PhysicalFileSystem you return whatever implementation of IFileSystem you want.
 
-If you configure Umbraco to use a custom file system provider for media, you most likely won't need to access the implementation directly. Umbraco uses a wrapper class called `MediaFileSystem`. You can get a reference to this wrapper class via dependency injection in the constructor for your custom class or controller:
+If you configure Umbraco to use a custom file system provider for media, you shouldn't access the implementation directly. Umbraco uses a manager class called `MediaFileManager`. You can get a reference to this manager class via dependency injection in the constructor for your custom class or controller:
 
 ```csharp
- public class ImagesController : UmbracoAuthorizedApiController
- {
-    private readonly IMediaFileSystem _mediaFileSystem;
+public class ImagesController : UmbracoAuthorizedApiController
+{
+    private readonly MediaFileManager _mediaFileManager;
 
-    public ImagesController(IMediaFileSystem mediaFileSystem)
+    public ImagesController(MediaFileManager mediaFileManager)
     {
-        _mediaFileSystem = mediaFileSystem;
+        _mediaFileManager = mediaFileManager;
     }
+
+{...}
 ```
 
-This will be enough in most cases and is the way Umbraco will access the file system provider. The wrapper class implements the same interface `IFileSystem` as any custom providers should do, so you will be able to call the same methods.
+You can then access the configured file system provider through `_mediaFileManager.FileSystem`, which is the same way Umbraco will access the file system provider.
 
 ## MediaPath Scheme
 
@@ -140,56 +154,60 @@ These are accessible via dependency injection
 ```csharp
 public class FileSystemLocations 
 {
-    private readonly IFileSystems _fileSystems;
-    public FileSystemLocations(IFileSystems fileSystems)
+    private readonly FileSystems _fileSystems;
+    public FileSystemLocations(FileSystems fileSystems)
     {
         _fileSystems = fileSystems;
         var macroPartialsFileSystem = _fileSystems.MacroPartialsFileSystem;
     }     
 ```
 
-Both `IFileSystem` and `IMediaFileSystem` are located in the `Umbraco.Cms.Core.IO` namespace.
+`IFileSystem`, `MediaFileManager`, and `FileSystems` are located in the `Umbraco.Cms.Core.IO` namespace.
 
-## Custom providers
+### Stylesheet Filesystem
 
-There is an Azure Blob Storage provider:
+Like with the media file system it is also possible to replace the stylesheet filesystem with your own implementation of `IFileSystem` in a composer. It's important to note here that, unlike media file system, you cannot replace the filesystem with a `PhysicalFileSystem` using a different root path or root URL, this will not work, and will cause issues since the root path is coupled to the virtual path, given by the frontend, e.g. `/css/MyBeautifulStyle.css`. 
 
-* [Azure Blob Storage](Azure-Blob-Storage/)
+When replacing the stylesheet filesystem, you don't need to register it, since it's only available through Filesystems, what you need to do instead is configure the `FileSystems` to use your implementation for the StylesheetsFileSystem.
 
-### Creating your own FileSystem provider
-Create your filesystem class:
-```csharp
-public class MyFileSystem : FileSystemWrapper
+The IUmbracoBuilder has an extension method for configuring the `FileSystems`, you need to invoke this method with an action that accepts an `IServiceProvider` and the `FileSystems` you will configure, configuring the `FileSystems` can look like this:
+
+```c#
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Configuration.Models;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Hosting;
+using Umbraco.Cms.Core.IO;
+using Umbraco.Cms.Infrastructure.DependencyInjection;
+
+namespace UmbracoExamples.Composition
 {
-    public MyFileSystem(IFileSystem innerFileSystem)
-        : base(innerFileSystem)
-    { }
+    public class FileSystemComposer : IUserComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.ConfigureFileSystems((factory, systems) =>
+            {
+                IIOHelper ioHelper = factory.GetRequiredService<IIOHelper>();
+                IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+                ILogger<PhysicalFileSystem> logger = factory.GetRequiredService<ILogger<PhysicalFileSystem>>();
+                GlobalSettings settings = factory.GetRequiredService<IOptions<GlobalSettings>>().Value;
+
+                var path = settings.UmbracoCssPath;
+                var rootPath = hostingEnvironment.MapPathWebRoot(path);
+                var rootUrl = hostingEnvironment.ToAbsolute(path);
+                var fileSystem = new YourFileSystemImplementaion(ioHelper, hostingEnvironment, logger, rootPath, rootUrl);
+
+                systems.SetStylesheetFilesystem(fileSystem);
+            });
+        }
+    }
 }
 ```
-The constructor can have more parameters, that will be resolved by the dependency injection container.
 
-Register your new filesystem implementation, in a component:
-```csharp
-  composition.RegisterFileSystem<MyFileSystem>();
-```
-Register the underlying filesystem:
-```csharp
-  composition.RegisterUniqueFor<IFileSystem, MyFileSystem>(...);
-```
-You can inject `MyFileSystem` wherever it's needed.
+Where `YourFileSystemImplementation` is a class that implements `IFileSystem`. This should always be done in a composer, since we do not recommend trying to change filesystems on the fly. 
 
-Furthermore it's possible to declare a filesystem interface:
-```csharp
-  public interface IMyFileSystem : IFileSystem
-  { }
-```
-Make the class implement the interface, then
-register your filesystem, in a component:
-```csharp
-  composition.RegisterFileSystem<IMyFileSystem, MyFileSystem>();
-  composition.RegisterUniqueFor<IFileSystem, IMyFileSystem>(...);
-```
-You can inject IMyFileSystem wherever it's needed.
-
-
-
+After the `SetStylesheetFileSystem` method has run, `FileSystems.StylesheetsFileSystem` will return the instance that was created in the `ConfigureFileSystems` extension method.
