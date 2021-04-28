@@ -57,8 +57,7 @@ The unattended installs feature is disabled by default and in order to enable it
 ```
 Remember to set the value of `InstallUnattended` to `true`.
 
-Alternatively you may set your configuration with Environment Variables or other means
-https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#environment-variables
+Alternatively you may set your configuration with Environment Variables or other means. Learn more about this in the [Microsoft .Net Core config documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#environment-variables).
 
 The keys for this would then be as follows:
 ```
@@ -77,9 +76,9 @@ Once it has completed, you should see the following when visiting the frontend o
 ![Frontend of Umbraco site installed using the unattended installs feature](images/Unattended/final-screen.png)
 
 ## Configuration options
-Depending on your preferences, you can use any type of configuration to specify the connection string and login information, as well as enable unattended install. Due to the new configuration functionality, it is possible to read from all kinds of sources. One example can be using a JSON file or environment variables.  
+Depending on your preferences, you can use any type of configuration to specify the connection string and login information, as well as enable unattended install. With the extending configuration functionality, it is possible to read from all kinds of sources. One example can be using a JSON file or environment variables.   
 
-**Program.cs** has a condition, which if met - *appsettings.Local.json* file will be added and configured as a configuration source. 
+**Program.cs** has a condition, which if met, an *appsettings.Local.json* file will be added and configured as a configuration source. 
 
 ```c#
 #if DEBUG

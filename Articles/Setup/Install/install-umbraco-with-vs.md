@@ -24,9 +24,11 @@ _Follow these steps to do a full install of Umbraco using Visual Studio._
 To install Umbraco we first need to install Umbraco's dotnet new templates.
 *For more information check the first 2 steps of [Install Umbraco with .NET CLI](install-umbraco-with-templates.md#Install-the-template)*
 
-**Note:** Check that your Visual Studio version is at least 16.8 (`Help` > `About Microsoft Visual Studio`), lower versions do not install the correct NuGet dependencies.
+:::note  
+Check that your Visual Studio version is at least 16.8 (`Help` > `About Microsoft Visual Studio`), lower versions do not install the correct NuGet dependencies.  
+:::
 
-![](images/VS/visual-studio-version-v9.png)
+![Make sure you verify that you are using a compatible version of Visual Studio](images/VS/visual-studio-version-v9.png)
 
 ### Create project
 Go to **File > New > Project** and search for `Umbraco` in the *Search for templates* field.
@@ -39,7 +41,9 @@ Once you select **Umbraco Project (Umbraco HQ)** navigate to the next step by cl
 In this step, you will be able to give your project and solution a name. 
 ![](images/VS/configure-project.png)
 
-**Note:** Refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.
+:::note  
+Refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.  
+:::
 
 ### Additional information
 On the next step, you are able to specify some additional parameters like *Target framework*. The rest are optional.
