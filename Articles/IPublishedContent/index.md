@@ -1,4 +1,8 @@
 ---
+v8-equivalent: "https://github.com/umbraco/UmbracoDocs/edit/main/Reference/Querying/IPublishedContent/index.md"
+state: complete
+updated-links: true
+verified-against: alpha-3
 versionFrom: 9.0.0
 ---
 

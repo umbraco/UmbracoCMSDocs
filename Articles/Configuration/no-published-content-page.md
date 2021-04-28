@@ -1,3 +1,10 @@
+---
+versionFrom: 9.0.0
+verified-against: alpha-3
+state: complete
+updated-links: true
+---
+
 # No Published Content Page
 
 When Umbraco is first installed and no starter kit is chosen, there will be no content created in the backoffice, and no published content to display.

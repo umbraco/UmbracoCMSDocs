@@ -4,6 +4,13 @@ This is the new repository for articles and tutorials on Umbraco on .NET Core.
 
 This is NOT the official documentation for Umbraco CMS. The official UmbracoDocs can be found on [github/UmbracoDocs](https://github.com/umbraco/UmbracoDocs) or on [our.umbraco.com](https://our.umbraco.com/).
 
+## Table of contents
+
+* [Reading and using the articles in this repo](#reading-and-using-the-articles)
+* [Try out Umbraco .NET Core (Umbraco 9)](#try-out-umbraco-on-net-core)
+* [Contributing to the repository](#contributing-to-the-repository)
+* [Status on Umbraco on .NET Core](#status-on-umbraco-on-net-core)
+
 ## Reading and using the articles
 
 It is **important to note** that this entire repository is a work in progress (WIP), which means that it will not contain a completed section of the documentation for Umbraco.
@@ -11,6 +18,42 @@ It is **important to note** that this entire repository is a work in progress (W
 All articles are divided into *topics* and each article can contain various *subtopics*. All topics and subtopics can be found under [Articles](Articles).
 
 Each tutorial in the [Tutorials](Tutorials) folder has its own folder, in which multiple files and subfolders might also be found.
+
+### Tags
+
+To keep track of the state of the articles added to this repository, we will be working with and adding a series of _tags_ to each article.
+
+Here's an overview of the tags that we will be using.
+
+**v8-equivalent**
+
+A link to the Umbraco 8 version of the article. Should link directly to the file on Github as opposed to linking to Our. Not used on new articles written for the new version.
+
+`v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/README.md"`
+
+**state**
+
+Is that article complete? Is it only partially done, or is it simply an outline as a starting point?
+
+`state: partial | complete | outline`
+
+**verified-against**
+
+Define which Umbraco 9 release the article has been verified against.
+
+`verified-against: alpha-3 | beta-1`
+
+**versionFrom**
+
+Will determine the Umbraco version from which the article i valid.
+
+`versionFrom: 9.0.0`
+
+**updated-link**
+
+As we start to migrate the documentation to Umbraco 9, it will not be possible to convert all links in the articles on the first go. This tag should be used to indicate whether the links in the article has been updated or not.
+
+`updated-links: true | false`
 
 ## Try out Umbraco on .NET Core
 
