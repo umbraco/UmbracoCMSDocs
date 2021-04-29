@@ -14,11 +14,9 @@ You can use the **Unattended installs** feature to allow for quick installation 
 
 This article will give you the details you need to install Umbraco unattended.
 
-## Get the correct version of Umbraco
+## Get clean install of Umbraco
 
-Since its beginning **Umbraco version 9** supports this feature.
-
-So it will be enough to get a clean instance from either the [NuGet feed](https://www.nuget.org/packages/UmbracoCms/) or download a zip file directly from [Downloads](https://our.umbraco.com/download).
+In order to get a clean instance of Umbraco either visit the [NuGet feed](https://www.nuget.org/packages/UmbracoCms/) or download a zip file directly from [Downloads](https://our.umbraco.com/download).
 
 ## Configure your database
 
