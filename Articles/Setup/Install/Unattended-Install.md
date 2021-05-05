@@ -59,10 +59,10 @@ Alternatively you may set your configuration with Environment Variables or other
 
 The keys for this would then be as follows:
 ```
-Umbraco__CMS_Unattended__InstallUnattended
-Umbraco__CMS_Unattended__UnattendedUserName
-Umbraco__CMS_Unattended__UnattendedUserEmail
-Umbraco__CMS_Unattended__UnattendedUserPassword
+Umbraco__CMS__Unattended__InstallUnattended
+Umbraco__CMS__Unattended__UnattendedUserName
+Umbraco__CMS__Unattended__UnattendedUserEmail
+Umbraco__CMS__Unattended__UnattendedUserPassword
 ```
 
 ## Initialize the unattended install
