@@ -34,11 +34,16 @@ In this article you will find instruction of 3 different ways of upgrading:
 
 ## Upgrade using NuGet
 
-You can open up the **Package Console** and type:
-`Update-Package Umbraco.Cms`
+NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:  
 
-You will be prompted to overwrite files, you should choose **"No to All"** by pressing the **"L"** . If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the **[version-specific guide](version-specific.md)**.
+`dotnet add package Umbraco.Cms --version <VERSION>`
 
-Or you can open the **NuGet Package Manager** for your project and select the **Updates** pane to get a list of available updates. Choose the package called **Umbraco.Cms** and click Update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
+After you have added a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file, run `dotnet restore` to install the package.
 
-![](images/upgrade-nuget-package.PNG)
+When the command completes, open the **.csproj** file to make sure the package reference was updated: 
+
+```xml
+<ItemGroup>
+  <PackageReference Include="Umbraco.Cms" Version="9.0.1" />
+</ItemGroup>
+```
