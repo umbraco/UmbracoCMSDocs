@@ -69,7 +69,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-    Raised when FileService.SaveScript is called in the API.<br>
+    Published when FileService.SaveScript is called in the API.<br>
     SavedEntities: Gets the collection of IScript objects being saved.
     </td>
   </tr>
@@ -84,7 +84,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-    Raised when FileService.SaveScript is called in the API, after the script has been saved.<br>
+    Published when FileService.SaveScript is called in the API, after the script has been saved.<br>
     SavedEntities: Gets the collection of saved IScript objects.
     </td>
   </tr>
@@ -100,7 +100,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-    Raised when FileService.SaveStyleSheet is called in the API.<br>
+    Published when FileService.SaveStyleSheet is called in the API.<br>
     SavedEntities: Gets the collection of IStylesheet objects being saved.
     </td>
   </tr>
@@ -115,7 +115,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-    Raised when FileService.SaveStylesheet is called in the API, after the script has been saved.<br>
+    Published when FileService.SaveStylesheet is called in the API, after the script has been saved.<br>
     SavedEntities: Gets the collection of saved IStylesheet objects.
     </td>
   </tr>
@@ -131,7 +131,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-      Raised when FileService.DeleteTemplate is called in the API.<br/>
+      Published when FileService.DeleteTemplate is called in the API.<br/>
       DeletedEntities: Gets the collection of ITemplate objects being deleted.
     </td>
   </tr>
@@ -146,7 +146,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-      Raised when FileService.DeleteTemplate is called in the API, after the template has been deleted.<br/>
+      Published when FileService.DeleteTemplate is called in the API, after the template has been deleted.<br/>
       DeletedEntities: Gets the collection of deleted ITemplate objects.
     </td>
   </tr>
@@ -162,7 +162,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-      Raised when FileService.DeleteScript is called in the API.<br/>
+      Published when FileService.DeleteScript is called in the API.<br/>
       DeletedEntities: Gets the collection of IScript objects being deleted.
     </td>
   </tr>
@@ -177,7 +177,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-      Raised when FileService.DeleteScript is called in the API, after the script has been deleted.<br/>
+      Published when FileService.DeleteScript is called in the API, after the script has been deleted.<br/>
       DeletedEntities: Gets the collection of deleted IScript objects.
     </td>
   </tr>
@@ -193,7 +193,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-      Raised when FileService.DeleteStylesheet is called in the API.<br/>
+      Published when FileService.DeleteStylesheet is called in the API.<br/>
       DeletedEntities: Gets the collection of IStylesheet objects being deleted.
     </td>
   </tr>
@@ -208,7 +208,7 @@ The FileService class implements IFileService. It provides access to operations 
       </ul>
     </td>
     <td>
-      Raised when FileService.DeleteStylesheet is called in the API, after the stylesheet has been deleted.<br/>
+      Published when FileService.DeleteStylesheet is called in the API, after the stylesheet has been deleted.<br/>
       DeletedEntities: Gets the collection of deleted IStylesheet objects.
     </td>
   </tr>
