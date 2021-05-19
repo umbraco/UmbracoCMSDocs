@@ -488,7 +488,7 @@ Umbraco V8 introduced the concept of Variants for Document Types, initially to a
 
 These variants can be saved, published and unpublished independently of each other. (Unpublishing a 'mandatory language' variant of a content item - will trigger all culture variants to be unpublished).
 
-This poses a problem when handling notifications from the ContentService - eg Which culture just got published? do I want to run my 'custom' code that fires on save if it's just the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'. Depending which event you are handling there are helper methods you can call to find out:
+This poses a problem when handling notifications from the ContentService - eg Which culture just got published? do I want to run my 'custom' code that fires on save if it's just the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'. Depending on which event you are handling there are helper methods you can call to find out:
 
 #### Saving
 
@@ -498,7 +498,7 @@ When handling the ContentSavingNotification which will be published whenever a v
 public bool IsSavingCulture(IContent content, string culture);
 ```
 
-As an example you could check which cultures are being saved (it could be multiple, if multiple checkboxes are checked)
+As an example, you could check which cultures are being saved (it could be multiple if multiple checkboxes are checked)
 
 ```C#
 public void Handle(ContentSavingNotification notification)
@@ -548,7 +548,7 @@ public void Handle(ContentPublishingNotification notification)
 
 #### Unpublished
 
-Again the Unpublished notification does not get published when a single variant is Unpublished, instead the Published notification can be used, and the 'HasUnpublishedCulture' extension method of the ContentPublishedNotification can determine which variant being unpublished triggered the publish.
+Again the Unpublished notification does not get published when a single variant is Unpublished, instead, the Published notification can be used, and the 'HasUnpublishedCulture' extension method of the ContentPublishedNotification can determine which variant being unpublished triggered the publish.
 
 ```C#
 public bool HasUnpublishedCulture(IContent content, string culture);
@@ -564,7 +564,7 @@ You can tell 'which' variant has triggered the publish using a helper method on 
 public bool IsPublishingCulture(IContent content, string culture);
 ```
 
-For example you could check which cultures are being published and act accordingly (it could be multiple, if multiple checkboxes are checked)
+For example, you could check which cultures are being published and act accordingly (it could be multiple if multiple checkboxes are checked)
 
 ```C#
 public void Handle(ContentPublishingNotification notification)
@@ -586,7 +586,7 @@ public void Handle(ContentPublishingNotification notification)
 ```
 
 #### Published
-In the Published notification you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or the UnPublish if it was only a single non mandatory variant that was unpublished.
+In the Published notification you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or the UnPublish if it was only a single non-mandatory variant that was unpublished.
 
 ```C#
 public bool HasPublishedCulture(IContent content, string culture);
@@ -605,9 +605,9 @@ bool IsCulturePublished(string culture);
 
 ### What happened to Creating and Created events?
 
-Both the ContentService.Creating and ContentService.Created events was removed, and therefore never moved to notifications. Why? Because these events were not guaranteed to trigger and therefore should not be used. This is because these events would only trigger when the ContentService.CreateContent method was used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events would not execute when constructing content that way.
+Both the ContentService.Creating and ContentService.Created events were removed, and therefore never moved to notifications. Why? Because these events were not guaranteed to trigger and therefore should not be used. This is because these events would only trigger when the ContentService.CreateContent method was used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events would not execute when constructing content that way.
 
-Further more, there's was reason to listen for the Creating/Created events. They were misleading since they didn't trigger before and after the entity was persisted. They triggered inside the CreateContent method which never persists the entity, it constructs a new content object.
+Furthermore, there was no reason to listen for the Creating/Created events. They were misleading since they didn't trigger before and after the entity was persisted. They triggered inside the CreateContent method which never persists the entity, it constructs a new content object.
 
 #### What do we use instead?
 

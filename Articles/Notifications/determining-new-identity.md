@@ -6,7 +6,7 @@ verified-against: beta-2
 
 # Determining if an entity is new
 
-Many of the Umbraco services publishes a 'Saved' notification (or similar). In some cases it is beneficial to know if this entity is a brand new entity that has been persisted to the database. This is how you can determine this.
+Many of the Umbraco services publishes a 'Saved' notification (or similar). In some cases, it is beneficial to know if this entity is a brand new entity that has been persisted in the database. This is how you can determine this.
 
 ## Checking if it's new
 
@@ -25,7 +25,7 @@ To check if an entity is new in the ContentSavingNotification use the following:
 var isNew = entity.HasIdentity is false;
 ```
 
-Since the IContent has not been saved yet, it's not nececary to cast it to `IRememberBeingDirty`. It won't have an identity if it's new, since it hasn't been committed yet.
+Since the IContent has not been saved yet, it's not necessary to cast it to `IRememberBeingDirty`. It won't have an identity if it's new, since it hasn't been committed yet.
 
 ## How it works
 
