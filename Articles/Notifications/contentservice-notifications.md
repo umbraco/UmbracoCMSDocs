@@ -1,3 +1,9 @@
+---
+v8-equivalent: "https://our.umbraco.com/documentation/reference/events/ContentService-Events"
+versionFrom: 9.0.0
+verified-against: beta-2
+---
+
 # ContentService Notifications
 
 The ContentService class is the most commonly used type when extending Umbraco using notifications. ContentService implements IContentService. It provides access to operations involving IContent.
@@ -474,5 +480,135 @@ namespace MySite
     DeletedBlueprints: The collection of deleted blueprint IContent
     </td>
   </tr>
-
 </table>
+
+### Variants and Notifications
+
+Umbraco V8 introduced the concept of Variants for Document Types, initially to allow different language variants of particular properties within a Document Type to be edited/translated based on the languages configured in your instance of Umbraco.
+
+These variants can be saved, published and unpublished independently of each other. (Unpublishing a 'mandatory language' variant of a content item - will trigger all culture variants to be unpublished).
+
+This poses a problem when handling notifications from the ContentService - eg Which culture just got published? do I want to run my 'custom' code that fires on save if it's just the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'. Depending which event you are handling there are helper methods you can call to find out:
+
+#### Saving
+
+When handling the ContentSavingNotification which will be published whenever a variant is saved. You can tell 'which' variant has triggered the save using an extension method on the ContentSavingNotification called 'IsSavingCulture'
+
+```C#
+public bool IsSavingCulture(IContent content, string culture);
+```
+
+As an example you could check which cultures are being saved (it could be multiple, if multiple checkboxes are checked)
+
+```C#
+public void Handle(ContentSavingNotification notification)
+{
+    foreach (var entity in notification.SavedEntities)
+    {
+        // Cultures being saved
+        var savingCultures = entity.AvailableCultures
+            .Where(culture => notification.IsSavingCulture(entity, culture)).ToList();
+        // or
+        if (notification.IsSavingCulture(entity, "en-GB"))
+        {
+            // Do things differently if the UK version of the page is being saved.
+        }
+    }
+}
+```
+
+#### Saved
+
+With the Saved notification you can similarly use the 'HasSavedCulture' method of the 'ContentSavedNotification' to detect which culture caused the Save.
+
+```C#
+public bool HasSavedCulture(IContent content, string culture);
+```
+
+#### Unpublishing
+
+When handling the Unpublishing notification, this might not work how you would expect! If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur, then the Unpublishing notification will be published as expected.
+
+However, if only one variant is being unpublished, the Unpublishing event will not be triggered. This is because the content item itself is not fully 'unpublished' by the action. Instead what occurs is a 'publish' action 'without' the variant that has been unpublished.
+
+You can therefore detect the Unpublishing of a variant in the publishing notification - using the IsUnpublishingCulture extension method of the `ContentPublishingNotification`
+
+```C#
+public void Handle(ContentPublishingNotification notification)
+{
+    foreach (var node in notification.PublishedEntities)
+    {
+        if (notification.IsUnpublishingCulture(node, "da-DK"))
+        {
+            // Bye bye DK!
+        }
+    }
+}
+```
+
+#### Unpublished
+
+Again the Unpublished notification does not get published when a single variant is Unpublished, instead the Published notification can be used, and the 'HasUnpublishedCulture' extension method of the ContentPublishedNotification can determine which variant being unpublished triggered the publish.
+
+```C#
+public bool HasUnpublishedCulture(IContent content, string culture);
+```
+
+#### Publishing
+
+When handling the ContentPublishingNotification which will be triggered whenever a variant is published (or unpublished - see note in Unpublishing section).
+
+You can tell 'which' variant has triggered the publish using a helper method on the ContentPublishingNotification called IsPublishingCulture
+
+```C#
+public bool IsPublishingCulture(IContent content, string culture);
+```
+
+For example you could check which cultures are being published and act accordingly (it could be multiple, if multiple checkboxes are checked)
+
+```C#
+public void Handle(ContentPublishingNotification notification)
+{
+    foreach (var node in notification.PublishedEntities)
+    {
+        var publishingCultures = node.AvailableCultures
+            .Where(culture => notification.IsPublishingCulture(node, culture)).ToList();
+        
+        var unPublishingCultures = node.AvailableCultures
+            .Where(culture => notification.IsUnpublishingCulture(node, culture)).ToList();
+        // or
+        if (notification.IsPublishingCulture(node, "da-DK"))
+        {
+            // Welcome back DK!
+        }
+    }
+}
+```
+
+#### Published
+In the Published notification you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or the UnPublish if it was only a single non mandatory variant that was unpublished.
+
+```C#
+public bool HasPublishedCulture(IContent content, string culture);
+public bool HasUnpublishedCulture(ICotnent content, string culture);
+```
+
+#### IContent Helpers
+
+In each of these notifications, the entities being Saved, Published, and Unpublished are `IContent` entities. There are some useful helper methods on IContent to discover the status of the content item's variant cultures:
+
+```C#
+bool IsCultureAvailable(string culture);
+bool IsCultureEdited(string culture);
+bool IsCulturePublished(string culture);
+```
+
+### What happened to Creating and Created events?
+
+Both the ContentService.Creating and ContentService.Created events was removed, and therefore never moved to notifications. Why? Because these events were not guaranteed to trigger and therefore should not be used. This is because these events would only trigger when the ContentService.CreateContent method was used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events would not execute when constructing content that way.
+
+Further more, there's was reason to listen for the Creating/Created events. They were misleading since they didn't trigger before and after the entity was persisted. They triggered inside the CreateContent method which never persists the entity, it constructs a new content object.
+
+#### What do we use instead?
+
+The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](./determining-new-identity.md)
