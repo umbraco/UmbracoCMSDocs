@@ -125,7 +125,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Now all the notifications you registered in your extension method will be handled by your handler.
 
-## Content and Media notifications
+## Content, Media, and Member notifications
 
 * See [ContentService Notifications](./contentservice-notifications.md) for a listing of the ContentService object notifications.
 * See [MediaService Notifications](./mediaservice-notifications.md) for a listing of the MediaService object notifications.
@@ -133,7 +133,9 @@ Now all the notifications you registered in your extension method will be handle
 
 ## Other notifications
 
-* See [ContentTypeService Notifications](./contentservice-notifications.md) for a listing of the ContentTypeService object notifications.
+* See [ContentTypeService Notifications](./contenttypeservice-notifications.md) for a listing of the ContentTypeService object notifications.
+* See [MediaTypeService Notifications](./mediatypeservice-notifications.md) for a listing of the MediaTypeService object notifiactions.
+* See [MemberTypeService Notifications](./membertypeservice-notifications.md) for a listing of the MemberTypeService object notifications.
 * See [DataTypeService Notifications](./datatypeservice-notifications.md) for a listing of the DataTypeSErvice object notifications
 * See [FileService Notifications](./fileservice-notifications.md) for a listing of the FileService object notifications.
 * See [LocalizationService Notifications](./localizationservice-notifications.md) for a listing of the LocalizationService object notifications.
