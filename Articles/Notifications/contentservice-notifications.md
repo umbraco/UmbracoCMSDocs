@@ -208,7 +208,7 @@ namespace MySite
     </td>
     <td>
     Published when IContentService.Move is called in the API.<br/>
-    NOTE: If the target parent is the Recycle bin, this notification is never publused. Try the ContentMovingToRecycleBinNotification instead.<br/>
+    NOTE: If the target parent is the Recycle bin, this notification is never published. Try the ContentMovingToRecycleBinNotification instead.<br/>
     MoveInfoCollection will for each moving entity provide:
       <ol>
         <li>Entity: Gets the IContent object being moved</li>
@@ -230,7 +230,7 @@ namespace MySite
     <td>
     Published when IContentService.Move is called in the API.
     The notification is published after the content object has been moved.<br/>
-    NOTE: If the target parent is the Recycle bin, this notification is never publused. Try the ContentMovedToRecycleBinNotification instead.<br/>
+    NOTE: If the target parent is the Recycle bin, this notification is never published. Try the ContentMovedToRecycleBinNotification instead.<br/>
     MoveInfoCollection will for each moving entity provide:
       <ol>
         <li>Entity: Gets the IContent object being moved</li>
@@ -431,7 +431,7 @@ namespace MySite
       </ul>
     </td>
     <td>
-    Raised when ContentService.EmptyRecycleBin is called in the API.<br/>
+    Published when ContentService.EmptyRecycleBin is called in the API.<br/>
     DeletedEntities: The collection of IContent objects being deleted.
     </td>
   </tr>
@@ -446,7 +446,7 @@ namespace MySite
       </ul>
     </td>
     <td>
-    Raised when ContentService.EmptyRecycleBin is called in the API, after the RecycleBin has been emptied.<br/>
+    Published when ContentService.EmptyRecycleBin is called in the API, after the RecycleBin has been emptied.<br/>
     DeletedEntities: The collection of deleted IContent object.
     </td>
   </tr>
@@ -461,7 +461,7 @@ namespace MySite
       </ul>
     </td>
     <td>
-    Raised when ContentService.SavedBlueprint is called in the API.<br/>
+    Published when ContentService.SavedBlueprint is called in the API.<br/>
     SavedBlueprint: Gets the saved blueprint IContent object
     </td>
   </tr>
@@ -476,7 +476,7 @@ namespace MySite
       </ul>
     </td>
     <td>
-    Raised when ContentService.DeletedBlueprint is called in the API.<br/>
+    Published when ContentService.DeletedBlueprint is called in the API.<br/>
     DeletedBlueprints: The collection of deleted blueprint IContent
     </td>
   </tr>
